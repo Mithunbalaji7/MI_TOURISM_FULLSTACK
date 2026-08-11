@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>What's Others | MI Tourism Development</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* Header */
+
+.header{
+background:#1abc9c;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.header h1{
+font-size:40px;
+}
+
+.header p{
+margin-top:10px;
+font-size:18px;
+}
+
+/* Navbar */
+
+.navbar{
+background:#333;
+overflow:hidden;
+}
+
+.navbar a{
+float:left;
+color:white;
+text-decoration:none;
+padding:15px 18px;
+}
+
+.navbar a:hover{
+background:#1abc9c;
+}
+
+.navbar .right{
+float:right;
+}
+
+/* Hero */
+
+.hero{
+
+height:430px;
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+
+url("assets/images/others-banner.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+color:white;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+width:70%;
+
+font-size:20px;
+
+line-height:34px;
+
+}
+
+.hero button{
+
+margin-top:30px;
+
+padding:15px 35px;
+
+background:#1abc9c;
+
+border:none;
+
+color:white;
+
+font-size:18px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+.hero button:hover{
+
+background:#16a085;
+
+}
+
+/* Section */
+
+.section-title{
+
+text-align:center;
+
+font-size:35px;
+
+margin:50px;
+
+color:#333;
+
+}
+
+/* Cards */
+
+.cards{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:30px;
+
+padding:20px;
+
+}
+
+.card{
+
+width:340px;
+
+background:white;
+
+border-radius:10px;
+
+overflow:hidden;
+
+box-shadow:0 0 12px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:contain;
+
+display:block;
+
+
+}
+
+.content{
+
+padding:20px;
+
+}
+
+.content h3{
+
+color:#1abc9c;
+
+margin-bottom:10px;
+
+}
+
+.content p{
+
+line-height:28px;
+
+color:#555;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:12px 25px;
+
+background:#1abc9c;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:5px;
+
+}
+
+.btn:hover{
+
+background:#16a085;
+
+}
+
+/* Info Boxes */
+
+.info-grid{
+
+width:90%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.info{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.15);
+
+}
+
+.info h3{
+
+color:#1abc9c;
+
+margin-bottom:15px;
+
+}
+
+.info p{
+
+line-height:28px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.cards{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+width:90%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>MI Tourism Development</h1>
+
+<p>Everything You Need During Your Journey</p>
+
+</div>
+
+<div class="navbar">
+
+<a href="HOME.html">HOME</a>
+<a href="hotels.html">HOTELS</a>
+<a href="packages.html">TOUR PACKAGES</a>
+<a href="events.html">EVENT PLACES</a>
+<a href="others.html">WHAT'S OTHERS</a>
+<a href="search.html">SEARCH</a>
+<a href="booking.html">BOOK TOUR</a>
+<a href="gallery.html">GALLERY</a>
+<a href="blog.html">BLOG</a>
+<a href="news.html">NEWS</a>
+<a href="contact.html">CONTACT</a>
+<a href="dashboard.html">DASHBOARD</a>
+<a href="login.html" class="right">LOGIN</a>
+
+</div>
+
+<section class="hero">
+
+<h1>More Travel Essentials</h1>
+
+<p>
+
+Discover restaurants, shopping destinations,
+transportation services, emergency contacts,
+travel tips and much more.
+
+</p>
+
+<button onclick="location.href='booking.html'">
+
+Plan Your Journey
+
+</button>
+
+</section>
+
+<h2 class="section-title">
+
+Popular Tourist Services
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="assets/img/restaurant.png">
+
+<div class="content">
+
+<h3>🍽 Restaurants</h3>
+
+<p>
+
+Explore famous restaurants,
+traditional foods and local cuisines.
+
+</p>
+
+<a href="#" class="btn">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/img/shopping.png">
+
+<div class="content">
+
+<h3>🛍 Shopping</h3>
+
+<p>
+
+Visit malls, local markets,
+handicraft stores and souvenir shops.
+
+</p>
+
+<a href="#" class="btn">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/img/transport.png">
+
+<div class="content">
+
+<h3>🚕 Transportation</h3>
+
+<p>
+
+Book taxis,
+buses,
+metro and railway services easily.
+
+</p>
+
+<a href="#" class="btn">
+
+Explore
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Travel Information
+
+</h2>
+
+<div class="info-grid">
+
+<div class="info">
+
+<h3>🌤 Weather</h3>
+
+<p>
+
+Check weather before planning your trip.
+
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>🚑 Emergency</h3>
+
+<p>
+
+Police, Ambulance,
+Hospital and Tourist Helpline.
+
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>💱 Currency</h3>
+
+<p>
+
+ATM,
+Banks,
+UPI,
+Card Payment Available.
+
+</p>
+
+</div>
+
+<div class="info">
+
+<h3>📍 Travel Tips</h3>
+
+<p>
+
+Carry ID,
+Book Hotels Early,
+Keep Emergency Numbers.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- PART 2 STARTS HERE -->
+
+<!-- ========================= -->
+<!-- FAMOUS RESTAURANTS -->
+<!-- ========================= -->
+
+<h2 class="section-title">🍽 Famous Restaurants</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/img/restaurant1.png" alt="Restaurant">
+<div class="content">
+<h3>Spice Garden Restaurant</h3>
+<p>
+Experience authentic South Indian meals,
+delicious biryanis, seafood, and traditional desserts
+served in a family-friendly atmosphere.
+</p>
+<a href="#" class="btn">View Menu</a>
+</div>
+</div>
+
+<div class="card">
+<img src="assets/img/restaurant2.png" alt="Restaurant">
+<div class="content">
+<h3>Ocean View Dining</h3>
+<p>
+Enjoy fresh seafood while overlooking the beautiful
+coastline. Perfect for couples and families.
+</p>
+<a href="#" class="btn">Reserve Table</a>
+</div>
+</div>
+
+<div class="card">
+<img src="assets/img/restaurant3.png" alt="Restaurant">
+<div class="content">
+<h3>Royal Food Court</h3>
+<p>
+A modern food court offering Indian,
+Chinese, Italian and continental cuisines
+under one roof.
+</p>
+<a href="#" class="btn">Explore</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- SHOPPING DESTINATIONS -->
+<!-- ========================= -->
+
+<h2 class="section-title">🛍 Shopping Destinations</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/img/mall.png" alt="Shopping Mall">
+<div class="content">
+<h3>City Shopping Mall</h3>
+<p>
+Luxury brands, entertainment,
+restaurants, cinemas and gaming zones
+for a complete shopping experience.
+</p>
+<a href="#" class="btn">Visit Mall</a>
+</div>
+</div>
+
+<div class="card">
+<img src="assets/img/market.png" alt="Market">
+<div class="content">
+<h3>Traditional Market</h3>
+<p>
+Buy handcrafted products,
+textiles, spices, wooden crafts,
+and memorable souvenirs.
+</p>
+<a href="#" class="btn">Explore Market</a>
+</div>
+</div>
+
+<div class="card">
+<img src="assets/img/handicraft.png" alt="Handicrafts">
+<div class="content">
+<h3>Handicraft Village</h3>
+<p>
+Support local artisans by purchasing
+beautiful handmade decorations,
+paintings and gifts.
+</p>
+<a href="#" class="btn">Shop Now</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- LOCAL TRANSPORT -->
+<!-- ========================= -->
+
+<h2 class="section-title">🚖 Local Transport</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/img/taxi.png" alt="Taxi">
+<div class="content">
+<h3>Taxi Services</h3>
+<p>
+24×7 taxi availability for airport transfers,
+city rides and sightseeing tours with
+professional drivers.
+</p>
+<a href="#" class="btn">Book Taxi</a>
+</div>
+</div>
+
+<div class="card">
+<img src="assets/img/bus.png" alt="Bus">
+<div class="content">
+<h3>Public Bus</h3>
+<p>
+Affordable public transport connecting
+major tourist attractions,
+railway stations and bus terminals.
+</p>
+<a href="#" class="btn">View Routes</a>
+</div>
+</div>
+
+<div class="card">
+<img src="assets/img/train.png" alt="Train">
+<div class="content">
+<h3>Metro & Railway</h3>
+<p>
+Fast, comfortable and reliable
+transportation for daily travel
+and intercity journeys.
+</p>
+<a href="#" class="btn">Schedule</a>
+</div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- EMERGENCY CONTACTS -->
+<!-- ========================= -->
+
+<h2 class="section-title">🚑 Emergency Contacts</h2>
+
+<div class="info-grid">
+
+<div class="info">
+<h3>🚓 Police</h3>
+<p>
+Emergency Number<br>
+<b>100 / 112</b>
+</p>
+</div>
+
+<div class="info">
+<h3>🚑 Ambulance</h3>
+<p>
+Medical Emergency<br>
+<b>108</b>
+</p>
+</div>
+
+<div class="info">
+<h3>🔥 Fire Service</h3>
+<p>
+Fire & Rescue<br>
+<b>101</b>
+</p>
+</div>
+
+<div class="info">
+<h3>☎ Tourist Helpline</h3>
+<p>
+24×7 Tourist Assistance<br>
+<b>1363</b>
+</p>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- WEATHER INFORMATION -->
+<!-- ========================= -->
+
+<h2 class="section-title">🌦 Weather Information</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="content">
+<h3>☀ Summer</h3>
+<p>
+Temperature ranges from
+30°C to 40°C.
+Carry light cotton clothes,
+water bottles and sunscreen.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="content">
+<h3>🌧 Monsoon</h3>
+<p>
+Pleasant climate with moderate rainfall.
+Carry umbrellas,
+raincoats and waterproof footwear.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="content">
+<h3>❄ Winter</h3>
+<p>
+Cool and comfortable weather
+between 18°C and 28°C.
+Best season for sightseeing.
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- TRAVEL TIPS -->
+<!-- ========================= -->
+
+<h2 class="section-title">💡 Essential Travel Tips</h2>
+
+<div class="info-grid">
+
+<div class="info">
+<h3>📄 Carry Documents</h3>
+<p>
+Always keep valid ID proof,
+tickets and hotel confirmations.
+</p>
+</div>
+
+<div class="info">
+<h3>💳 Digital Payments</h3>
+<p>
+Carry some cash,
+but UPI and cards
+are accepted almost everywhere.
+</p>
+</div>
+
+<div class="info">
+<h3>🎒 Pack Smart</h3>
+<p>
+Bring comfortable shoes,
+medicines,
+power bank and water bottle.
+</p>
+</div>
+
+<div class="info">
+<h3>📍 Stay Safe</h3>
+<p>
+Follow local guidelines,
+keep valuables secure,
+and save emergency numbers.
+</p>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- END OF PART 2 -->
+<!-- PART 3 STARTS NEXT -->
+<!-- ========================= -->
+<!-- TESTIMONIALS -->
+<!-- ========================= -->
+
+<h2 class="section-title">⭐ Tourist Testimonials</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="content">
+<h3>⭐⭐⭐⭐⭐ Priya R.</h3>
+<p>
+"My vacation was perfectly organized.
+The hotel, transport, and sightseeing
+were excellent. Highly recommended!"
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="content">
+<h3>⭐⭐⭐⭐⭐ John M.</h3>
+<p>
+"The restaurants and shopping places
+recommended by MI Tourism were amazing.
+Excellent customer support!"
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="content">
+<h3>⭐⭐⭐⭐⭐ Arjun K.</h3>
+<p>
+"Booking was simple, transportation
+was comfortable, and the overall
+experience exceeded my expectations."
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- FAQ -->
+<!-- ========================= -->
+
+<hh2 class="section-title">❓ Frequently Asked Questions</h2>
+
+<div style="width:90%;margin:auto;padding-bottom:40px;">
+
+<div class="info" style="margin-bottom:20px;">
+<h3>When is the best time to visit?</h3>
+<p>October to March offers pleasant weather and comfortable sightseeing.</p>
+</div>
+
+<div class="info" style="margin-bottom:20px;">
+<h3>Can I book hotels online?</h3>
+<p>Yes. Our booking portal allows secure hotel and tour package reservations.</p>
+</div>
+
+<div class="info" style="margin-bottom:20px;">
+<h3>Are transportation services available?</h3>
+<p>Yes. Taxi, bus, railway and airport transportation are available throughout the city.</p>
+</div>
+
+<div class="info">
+<h3>Is online payment secure?</h3>
+<p>Absolutely. We support secure payment methods including UPI, Cards and Net Banking.</p>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- CONTACT -->
+<!-- ========================= -->
+
+<h2 class="section-title">📞 Contact Us</h2>
+
+<div style="width:90%;margin:auto;background:white;padding:40px;border-radius:10px;box-shadow:0 0 12px rgba(0,0,0,.15);margin-bottom:50px;">
+
+<form>
+
+<input type="text"
+placeholder="Your Name"
+required
+style="width:100%;padding:15px;margin-bottom:20px;font-size:16px;">
+
+<input type="email"
+placeholder="Your Email"
+required
+style="width:100%;padding:15px;margin-bottom:20px;font-size:16px;">
+
+<input type="text"
+placeholder="Subject"
+style="width:100%;padding:15px;margin-bottom:20px;font-size:16px;">
+
+<textarea
+rows="6"
+placeholder="Write your message..."
+style="width:100%;padding:15px;font-size:16px;"></textarea>
+
+<br><br>
+
+<button class="btn" type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer style="background:#222;color:white;padding:50px 20px;">
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-around;gap:40px;">
+
+<div>
+<h2 style="color:#1abc9c;">MI Tourism Development</h2>
+<p style="margin-top:15px;line-height:28px;max-width:320px; style="display: flex; justify-content: center;">
+Helping travelers discover beautiful destinations,comfortable hotels, delicious restaurants,shopping centers and unforgettable experiences.
+</p>
+</div>
+
+<div>
+<h3 style="color:#1abc9c;">Quick Links</h3>
+<p><a href="HOME.html" style="color:white;text-decoration:none;">Home</a></p>
+<p><a href="packages.html" style="color:white;text-decoration:none;">Tour Packages</a></p>
+<p><a href="hotels.html" style="color:white;text-decoration:none;">Hotels</a></p>
+<p><a href="gallery.html" style="color:white;text-decoration:none;">Gallery</a></p>
+</div>
+
+<div>
+<h3 style="color:#1abc9c;">Support</h3>
+<p>Email : info@mitourism.com</p>
+<p>Phone : +91 70603 70603</p>
+<p>Tourist Helpline : 1363</p>
+<p>Emergency : 112</p>
+</div>
+
+<div>
+<h3 style="color:#1abc9c;">Follow Us</h3>
+<p> ⓕ𝐟𝐚𝐜𝐞𝐛𝐨𝐨𝐤 </p>
+<p>🅾 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 </p>
+<p>𝕏Twitter</p>
+<p>▶️YouTube🔴</p>
+</div>
+
+</div>
+
+<hr style="margin:35px 0;border:1px solid #444;">
+
+<p style="text-align:center;">
+© 2026 MI Tourism Development. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
+<script>
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button=>{
+button.addEventListener("click",function(e){
+
+if(this.getAttribute("href")=="#"){
+e.preventDefault();
+alert("Feature Coming Soon!");
+}
+
+});
+});
+
+window.addEventListener("scroll",function(){
+
+const navbar=document.querySelector(".navbar");
+
+if(window.scrollY>100){
+navbar.style.position="sticky";
+navbar.style.top="0";
+navbar.style.zIndex="1000";
+}
+
+});
+
+</script>
+
+</body>
+</html>

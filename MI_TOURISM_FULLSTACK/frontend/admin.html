@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Admin Panel - MI Tourism Development</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/common.css">
+<style>
+.header { padding: 30px; text-align: center; background: #333; color: white; }
+.util-bar { background: #333; }
+</style>
+</head>
+<body>
+
+<div class="header"><h1 style="font-family:arial black">MI TOURISM ADMIN PANEL</h1></div>
+<div class="util-bar">
+  <a href="HOME.html">View Site</a>
+  <a href="#" id="logoutLink" class="right">Logout</a>
+</div>
+
+<div class="page-wrap">
+  <div class="tabs">
+    <button class="active" onclick="showTab('places')">Places</button>
+    <button onclick="showTab('packages')">Packages</button>
+    <button onclick="showTab('users')">Users</button>
+    <button onclick="showTab('bookings')">Bookings</button>
+    <button onclick="showTab('news')">News</button>
+    <button onclick="showTab('gallery')">Gallery</button>
+    <button onclick="showTab('contact')">Contact Messages</button>
+    <button onclick="showTab('reports')">Reports</button>
+  </div>
+
+  <!-- PLACES -->
+  <div id="tab-places" class="tab-content card">
+    <h3>Tourist Places</h3>
+    <form id="placeForm" class="form-box" style="max-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <input type="hidden" id="place_id">
+      <div><label>Name</label><input id="place_name" required></div>
+      <div><label>District</label><input id="place_district" required></div>
+      <div><label>Category</label>
+        <select id="place_category">
+          <option>Hill Station</option><option>Spiritual</option><option>Beach</option>
+          <option>Heritage</option><option>Wildlife</option><option>Regular</option>
+        </select>
+      </div>
+      <div><label>Rating</label><input type="number" id="place_rating" step="0.1" min="0" max="5" value="4"></div>
+      <div><label>Image URL</label><input id="place_image"></div>
+      <div><label>Description</label><input id="place_description"></div>
+      <div style="grid-column:1/-1;">
+        <label><input type="checkbox" id="place_featured"> Featured</label>
+        <label><input type="checkbox" id="place_trending"> Trending</label>
+      </div>
+      <div style="grid-column:1/-1;"><button class="btn" type="submit">Save Place</button></div>
+    </form>
+    <table class="data-table" id="placesTable">
+      <thead><tr><th>Name</th><th>District</th><th>Category</th><th>Rating</th><th>Actions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- PACKAGES -->
+  <div id="tab-packages" class="tab-content card" style="display:none;">
+    <h3>Tour Packages</h3>
+    <form id="packageForm" class="form-box" style="max-width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <input type="hidden" id="package_id">
+      <div><label>Title</label><input id="package_title" required></div>
+      <div><label>Place</label><select id="package_place"></select></div>
+      <div><label>Duration (days)</label><input type="number" id="package_duration" value="1" min="1"></div>
+      <div><label>Price (₹)</label><input type="number" id="package_price" required></div>
+      <div><label>Image URL</label><input id="package_image"></div>
+      <div><label>Description</label><input id="package_description"></div>
+      <div style="grid-column:1/-1;"><label><input type="checkbox" id="package_trending"> Trending</label></div>
+      <div style="grid-column:1/-1;"><button class="btn" type="submit">Save Package</button></div>
+    </form>
+    <table class="data-table" id="packagesTable">
+      <thead><tr><th>Title</th><th>Place</th><th>Price</th><th>Actions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- USERS -->
+  <div id="tab-users" class="tab-content card" style="display:none;">
+    <h3>Users</h3>
+    <input type="text" id="userSearchBox" placeholder="Search by name, email or phone..." style="padding:8px;width:300px;">
+    <button class="btn" onclick="searchUsers()">Search</button>
+    <table class="data-table" id="usersTable">
+      <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Joined</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- BOOKINGS -->
+  <div id="tab-bookings" class="tab-content card" style="display:none;">
+    <h3>All Bookings</h3>
+    <table class="data-table" id="allBookingsTable">
+      <thead><tr><th>Code</th><th>User</th><th>Package</th><th>Date</th><th>Total</th><th>Status</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- NEWS -->
+  <div id="tab-news" class="tab-content card" style="display:none;">
+    <h3>Tourism News</h3>
+    <form id="newsForm" class="form-box" style="max-width:100%;">
+      <label>Title</label><input id="news_title" required>
+      <label>Content</label><textarea id="news_content" rows="3" required></textarea>
+      <label>Image URL</label><input id="news_image">
+      <button class="btn" type="submit">Publish News</button>
+    </form>
+    <table class="data-table" id="newsTable">
+      <thead><tr><th>Title</th><th>Published</th><th>Actions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- GALLERY -->
+  <div id="tab-gallery" class="tab-content card" style="display:none;">
+    <h3>Gallery Images</h3>
+    <form id="galleryForm" class="form-box" style="max-width:100%;">
+      <label>Title</label><input id="gallery_title">
+      <label>Category</label><input id="gallery_category" placeholder="e.g. Beach, Hills, Temples">
+      <label>Image URL</label><input id="gallery_url" required>
+      <button class="btn" type="submit">Add Image</button>
+    </form>
+    <div class="grid" id="galleryAdminGrid"></div>
+  </div>
+
+  <!-- CONTACT MESSAGES -->
+  <div id="tab-contact" class="tab-content card" style="display:none;">
+    <h3>Contact Messages</h3>
+    <table class="data-table" id="contactTable">
+      <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Message</th><th>Date</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- REPORTS -->
+  <div id="tab-reports" class="tab-content card" style="display:none;">
+    <h3>Reports</h3>
+    <div class="stats-row" id="reportsSummary"></div>
+    <h4>Revenue by Method</h4>
+    <table class="data-table" id="revenueTable">
+      <thead><tr><th>Method</th><th>Transactions</th><th>Total (₹)</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="assets/js/api.js"></script>
+<script>
+requireAdmin();
+document.getElementById("logoutLink").addEventListener("click", (e) => { e.preventDefault(); Auth.logout(); });
+
+function showTab(name) {
+  document.querySelectorAll(".tab-content").forEach(el => (el.style.display = "none"));
+  document.getElementById("tab-" + name).style.display = "block";
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+  if (name === "users") loadUsers();
+  if (name === "bookings") loadAllBookings();
+  if (name === "news") loadNews();
+  if (name === "gallery") loadGalleryAdmin();
+  if (name === "contact") loadContactMessages();
+  if (name === "reports") loadReports();
+}
+
+/* ---------- PLACES ---------- */
+async function loadPlaces() {
+  const res = await apiRequest("/places");
+  if (!res.ok) return;
+  document.querySelector("#placesTable tbody").innerHTML = res.data.places.map(p => `
+    <tr>
+      <td>${p.name}</td><td>${p.district}</td><td>${p.category}</td><td>${p.rating}</td>
+      <td>
+        <button class="btn" onclick='editPlace(${JSON.stringify(p)})'>Edit</button>
+        <button class="btn danger" onclick="deletePlace(${p.id})">Delete</button>
+      </td>
+    </tr>`).join("");
+  return res.data.places;
+}
+function editPlace(p) {
+  document.getElementById("place_id").value = p.id;
+  document.getElementById("place_name").value = p.name;
+  document.getElementById("place_district").value = p.district;
+  document.getElementById("place_category").value = p.category;
+  document.getElementById("place_rating").value = p.rating;
+  document.getElementById("place_image").value = p.image_url || "";
+  document.getElementById("place_description").value = p.description || "";
+  document.getElementById("place_featured").checked = !!p.is_featured;
+  document.getElementById("place_trending").checked = !!p.is_trending;
+}
+document.getElementById("placeForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const id = document.getElementById("place_id").value;
+  const body = {
+    name: document.getElementById("place_name").value,
+    district: document.getElementById("place_district").value,
+    category: document.getElementById("place_category").value,
+    rating: document.getElementById("place_rating").value,
+    image_url: document.getElementById("place_image").value,
+    description: document.getElementById("place_description").value,
+    is_featured: document.getElementById("place_featured").checked,
+    is_trending: document.getElementById("place_trending").checked,
+  };
+  const res = id
+    ? await apiRequest(`/admin/places/${id}`, { method: "PUT", body })
+    : await apiRequest("/admin/places", { method: "POST", body });
+  if (res.ok) { e.target.reset(); document.getElementById("place_id").value = ""; loadPlaces(); loadPlaceDropdown(); }
+  else alert(res.data.message);
+});
+async function deletePlace(id) {
+  if (!confirm("Delete this place?")) return;
+  const res = await apiRequest(`/admin/places/${id}`, { method: "DELETE" });
+  if (res.ok) loadPlaces();
+}
+
+/* ---------- PACKAGES ---------- */
+async function loadPlaceDropdown() {
+  const res = await apiRequest("/places");
+  if (!res.ok) return;
+  document.getElementById("package_place").innerHTML =
+    "<option value=''>None</option>" + res.data.places.map(p => `<option value="${p.id}">${p.name}</option>`).join("");
+}
+async function loadPackages() {
+  const res = await apiRequest("/packages");
+  if (!res.ok) return;
+  document.querySelector("#packagesTable tbody").innerHTML = res.data.packages.map(p => `
+    <tr>
+      <td>${p.title}</td><td>${p.place_name || "-"}</td><td>₹${p.price}</td>
+      <td>
+        <button class="btn" onclick='editPackage(${JSON.stringify(p)})'>Edit</button>
+        <button class="btn danger" onclick="deletePackage(${p.id})">Delete</button>
+      </td>
+    </tr>`).join("");
+}
+function editPackage(p) {
+  document.getElementById("package_id").value = p.id;
+  document.getElementById("package_title").value = p.title;
+  document.getElementById("package_place").value = p.place_id || "";
+  document.getElementById("package_duration").value = p.duration_days;
+  document.getElementById("package_price").value = p.price;
+  document.getElementById("package_image").value = p.image_url || "";
+  document.getElementById("package_description").value = p.description || "";
+  document.getElementById("package_trending").checked = !!p.is_trending;
+}
+document.getElementById("packageForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const id = document.getElementById("package_id").value;
+  const body = {
+    title: document.getElementById("package_title").value,
+    place_id: document.getElementById("package_place").value || null,
+    duration_days: document.getElementById("package_duration").value,
+    price: document.getElementById("package_price").value,
+    image_url: document.getElementById("package_image").value,
+    description: document.getElementById("package_description").value,
+    is_trending: document.getElementById("package_trending").checked,
+  };
+  const res = id
+    ? await apiRequest(`/admin/packages/${id}`, { method: "PUT", body })
+    : await apiRequest("/admin/packages", { method: "POST", body });
+  if (res.ok) { e.target.reset(); document.getElementById("package_id").value = ""; loadPackages(); }
+  else alert(res.data.message);
+});
+async function deletePackage(id) {
+  if (!confirm("Delete this package?")) return;
+  const res = await apiRequest(`/admin/packages/${id}`, { method: "DELETE" });
+  if (res.ok) loadPackages();
+}
+
+/* ---------- USERS ---------- */
+async function loadUsers() {
+  const res = await apiRequest("/admin/users");
+  renderUsers(res.data.users || []);
+}
+async function searchUsers() {
+  const q = document.getElementById("userSearchBox").value;
+  const res = await apiRequest("/admin/users/search?q=" + encodeURIComponent(q));
+  renderUsers(res.data.users || []);
+}
+function renderUsers(users) {
+  document.querySelector("#usersTable tbody").innerHTML = users.map(u => `
+    <tr><td>${u.full_name}</td><td>${u.email}</td><td>${u.phone || "-"}</td><td>${u.role}</td><td>${formatDate(u.created_at)}</td></tr>
+  `).join("");
+}
+
+/* ---------- BOOKINGS ---------- */
+async function loadAllBookings() {
+  const res = await apiRequest("/admin/bookings");
+  if (!res.ok) return;
+  document.querySelector("#allBookingsTable tbody").innerHTML = res.data.bookings.map(b => `
+    <tr><td>${b.booking_code}</td><td>${b.full_name}</td><td>${b.package_title}</td>
+    <td>${formatDate(b.travel_date)}</td><td>₹${b.total_amount}</td>
+    <td><span class="badge ${b.status}">${b.status}</span></td></tr>
+  `).join("");
+}
+
+/* ---------- NEWS ---------- */
+async function loadNews() {
+  const res = await apiRequest("/news");
+  if (!res.ok) return;
+  document.querySelector("#newsTable tbody").innerHTML = res.data.news.map(n => `
+    <tr><td>${n.title}</td><td>${formatDate(n.published_at)}</td>
+    <td><button class="btn danger" onclick="deleteNews(${n.id})">Delete</button></td></tr>
+  `).join("");
+}
+document.getElementById("newsForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const body = {
+    title: document.getElementById("news_title").value,
+    content: document.getElementById("news_content").value,
+    image_url: document.getElementById("news_image").value,
+  };
+  const res = await apiRequest("/admin/news", { method: "POST", body });
+  if (res.ok) { e.target.reset(); loadNews(); } else alert(res.data.message);
+});
+async function deleteNews(id) {
+  if (!confirm("Delete this news item?")) return;
+  const res = await apiRequest(`/admin/news/${id}`, { method: "DELETE" });
+  if (res.ok) loadNews();
+}
+
+/* ---------- GALLERY ---------- */
+async function loadGalleryAdmin() {
+  const res = await apiRequest("/gallery");
+  if (!res.ok) return;
+  document.getElementById("galleryAdminGrid").innerHTML = res.data.images.map(g => `
+    <div class="card"><img src="${g.image_url}" style="width:100%;height:120px;object-fit:cover;">
+      <p>${g.title || ""} (${g.category || "General"})</p>
+      <button class="btn danger" onclick="deleteGalleryImage(${g.id})">Delete</button>
+    </div>`).join("");
+}
+document.getElementById("galleryForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const body = {
+    title: document.getElementById("gallery_title").value,
+    category: document.getElementById("gallery_category").value,
+    image_url: document.getElementById("gallery_url").value,
+  };
+  const res = await apiRequest("/admin/gallery", { method: "POST", body });
+  if (res.ok) { e.target.reset(); loadGalleryAdmin(); } else alert(res.data.message);
+});
+async function deleteGalleryImage(id) {
+  if (!confirm("Delete this image?")) return;
+  const res = await apiRequest(`/admin/gallery/${id}`, { method: "DELETE" });
+  if (res.ok) loadGalleryAdmin();
+}
+
+/* ---------- CONTACT MESSAGES ---------- */
+async function loadContactMessages() {
+  const res = await apiRequest("/admin/contact");
+  if (!res.ok) return;
+  document.querySelector("#contactTable tbody").innerHTML = res.data.messages.map(m => `
+    <tr><td>${m.name}</td><td>${m.email}</td><td>${m.phone || "-"}</td><td>${m.message}</td><td>${formatDate(m.created_at)}</td></tr>
+  `).join("");
+}
+
+/* ---------- REPORTS ---------- */
+async function loadReports() {
+  const [bookingRes, userRes, revenueRes] = await Promise.all([
+    apiRequest("/admin/reports/bookings"),
+    apiRequest("/admin/reports/users"),
+    apiRequest("/admin/reports/revenue"),
+  ]);
+  let html = "";
+  if (bookingRes.ok) html += `<div class="stat-box"><span class="stat-number">${bookingRes.data.total_bookings}</span><span class="stat-label">Total Bookings</span></div>`;
+  if (userRes.ok) html += `<div class="stat-box"><span class="stat-number">${userRes.data.total_users}</span><span class="stat-label">Total Users</span></div>`;
+  if (revenueRes.ok) html += `<div class="stat-box"><span class="stat-number">₹${revenueRes.data.total_revenue}</span><span class="stat-label">Total Revenue</span></div>`;
+  document.getElementById("reportsSummary").innerHTML = html;
+
+  if (revenueRes.ok) {
+    document.querySelector("#revenueTable tbody").innerHTML = revenueRes.data.by_method.map(m => `
+      <tr><td>${m.method}</td><td>${m.count}</td><td>₹${m.total}</td></tr>`).join("");
+  }
+}
+
+loadPlaces();
+loadPlaceDropdown();
+loadPackages();
+</script>
+</body>
+</html>

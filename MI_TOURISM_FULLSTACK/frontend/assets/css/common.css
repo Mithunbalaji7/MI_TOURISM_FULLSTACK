@@ -1,0 +1,132 @@
+/* =============================================================================
+   common.css
+   Shared styles for the NEW pages added to MI Tourism Development.
+   Colors / fonts intentionally match the existing HOME.html / project
+   INDEX.html design so the new pages feel like part of the same site:
+     - Header teal      : #1abc9c
+     - Navbar dark      : #333
+     - Body font        : Arial, Helvetica, sans-serif
+   Nothing here overrides or redefines the classes already used on
+   HOME.html / project INDEX.html (.header, .navbar, .row, .side, .main).
+   ============================================================================= */
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+  color: #222;
+}
+
+/* Small utility bar placed under the existing navbar on every page so users
+   can reach the new features without touching the original .navbar element. */
+.util-bar {
+  background: #1abc9c;
+  overflow: hidden;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.util-bar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 18px;
+  font-weight: bold;
+}
+.util-bar a:hover { text-decoration: underline; }
+.util-bar .right { float: right; margin-right: 0; margin-left: 18px; }
+
+.page-wrap {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.place-card img, .package-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.btn {
+  display: inline-block;
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+.btn:hover { background: #169c84; }
+.btn.danger { background: #d9534f; }
+.btn.danger:hover { background: #b52b28; }
+.btn.secondary { background: #333; }
+.btn.secondary:hover { background: #111; }
+
+form.form-box { max-width: 420px; margin: 0 auto; }
+.form-box label { display: block; margin-top: 12px; font-weight: bold; font-size: 14px; }
+.form-box input, .form-box select, .form-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.form-box button { margin-top: 18px; width: 100%; }
+
+.alert { padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; font-size: 14px; }
+.alert-error { background: #fdecea; color: #b52b28; border: 1px solid #d9534f; }
+.alert-success { background: #eafaf3; color: #169c84; border: 1px solid #1abc9c; }
+
+table.data-table { width: 100%; border-collapse: collapse; background: #fff; }
+table.data-table th, table.data-table td {
+  padding: 10px; border-bottom: 1px solid #eee; text-align: left; font-size: 14px;
+}
+table.data-table th { background: #333; color: #fff; }
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  text-align: center;
+  margin: 30px 0;
+}
+.stat-box { background: #1abc9c; color: #fff; padding: 24px 10px; border-radius: 8px; }
+.stat-box .stat-number { font-size: 32px; font-weight: bold; display: block; }
+.stat-box .stat-label { font-size: 13px; text-transform: uppercase; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; color: #fff; }
+.badge.Pending { background: #e0a800; }
+.badge.Confirmed { background: #1abc9c; }
+.badge.Cancelled { background: #d9534f; }
+
+.tabs { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.tabs button {
+  padding: 10px 16px; border: none; background: #ddd; cursor: pointer; border-radius: 6px; font-weight: bold;
+}
+.tabs button.active { background: #1abc9c; color: #fff; }
+
+.stars { color: #ffbf00; }
+
+footer.site-footer {
+  text-align: center; padding: 16px; color: #777; font-size: 13px;
+}

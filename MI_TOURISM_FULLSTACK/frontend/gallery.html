@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | MI Tourism Development</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+background:#009688;
+color:white;
+padding:18px;
+text-align:center;
+}
+
+.header h1{
+font-size:38px;
+}
+
+.header p{
+margin-top:8px;
+font-size:18px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+background:#222;
+overflow:hidden;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.navbar a{
+float:left;
+color:white;
+padding:15px 18px;
+text-decoration:none;
+transition:.3s;
+}
+
+.navbar a:hover{
+background:#009688;
+}
+
+.navbar .right{
+float:right;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+height:520px;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("assets/img/gallery-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+color:white;
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:62px;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+width:70%;
+font-size:22px;
+line-height:38px;
+
+}
+
+.hero button{
+
+margin-top:30px;
+padding:15px 35px;
+
+background:#00b894;
+
+border:none;
+color:white;
+font-size:18px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+.hero button:hover{
+
+background:#019875;
+
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+
+width:90%;
+margin:40px auto;
+display:flex;
+justify-content:center;
+
+}
+
+.search-box input{
+
+width:500px;
+padding:15px;
+
+font-size:18px;
+
+border:2px solid #009688;
+border-radius:30px;
+
+outline:none;
+
+}
+
+/* ================= CATEGORY ================= */
+
+.category{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+
+gap:15px;
+
+margin-bottom:40px;
+
+}
+
+.category button{
+
+padding:12px 25px;
+
+border:none;
+
+background:#009688;
+
+color:white;
+
+font-size:16px;
+
+border-radius:30px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.category button:hover{
+
+background:#00695c;
+
+}
+
+/* ================= TITLE ================= */
+
+.section-title{
+
+text-align:center;
+
+font-size:42px;
+
+margin:50px;
+
+color:#222;
+
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+
+width:92%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+background:white;
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:0 5px 18px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+}
+
+.card-content{
+
+padding:20px;
+
+}
+
+.card-content h3{
+
+color:#009688;
+
+margin-bottom:10px;
+
+}
+
+.card-content p{
+
+color:#666;
+
+line-height:28px;
+
+}
+
+.rating{
+
+margin:12px 0;
+
+color:orange;
+
+font-size:18px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+background:#009688;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:6px;
+
+}
+
+.btn:hover{
+
+background:#00796b;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+width:90%;
+
+font-size:18px;
+
+}
+
+.search-box input{
+
+width:90%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>MI Tourism Development</h1>
+
+<p>Explore Beautiful Destinations Across India & Beyond</p>
+
+</div>
+
+<div class="navbar">
+
+<a href="HOME.html">HOME</a>
+<a href="hotels.html">HOTELS</a>
+<a href="packages.html">TOUR PACKAGES</a>
+<a href="events.html">EVENT PLACES</a>
+<a href="others.html">WHAT'S OTHERS</a>
+<a href="search.html">SEARCH</a>
+<a href="booking.html">BOOK TOUR</a>
+<a href="gallery.html">GALLERY</a>
+<a href="blog.html">BLOG</a>
+<a href="news.html">NEWS</a>
+<a href="contact.html">CONTACT</a>
+<a href="dashboard.html">DASHBOARD</a>
+<a href="login.html" class="right">LOGIN</a>
+
+</div>
+
+<section class="hero">
+
+<h1>Discover Incredible Destinations</h1>
+
+<p>
+
+From snowy mountains to golden beaches,
+ancient temples to vibrant cities,
+start your unforgettable journey with
+MI Tourism Development.
+
+</p>
+
+<button onclick="location.href='booking.html'">
+
+Book Your Tour
+
+</button>
+
+</section>
+
+<div class="search-box">
+
+<input type="text"
+id="searchInput"
+placeholder="Search destination...">
+
+</div>
+
+<div class="category">
+
+<button onclick="filterSelection('all')">All</button>
+
+<button onclick="filterSelection('Hill')">Hill Stations</button>
+
+<button onclick="filterSelection('Beach')">Beaches</button>
+
+<button onclick="filterSelection('Temple')">Temples</button>
+
+<button onclick="filterSelection('Heritage')">Heritage</button>
+
+<button onclick="filterSelection('Nature')">Nature</button>
+
+<button onclick="filterSelection('International')">International</button>
+
+</div>
+
+<h2 class="section-title">
+
+Tourist Gallery
+
+</h2>
+
+<div class="gallery" id="gallery">
+<!-- Gallery Cards -->
+
+<div class="card Hill">
+<img src="assets/img/pack1.jpg">
+<div class="card-content">
+<h3>🏔 Ooty</h3>
+<p>Tamil Nadu</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Hill">
+<img src="assets/img/pack2.jpg">
+<div class="card-content">
+<h3>🌄 Kodaikanal</h3>
+<p>Tamil Nadu</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Heritage">
+<img src="assets/img/pack9.jpg">
+<div class="card-content">
+<h3>🏰 Mysore Palace</h3>
+<p>Karnataka</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Heritage">
+<img src="assets/img/pack28.jpg">
+<div class="card-content">
+<h3>🕌 Taj Mahal</h3>
+<p>Agra</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Heritage">
+<img src="assets/img/pack11.jpg">
+<div class="card-content">
+<h3>🗿 Mahabalipuram</h3>
+<p>Tamil Nadu</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Beach">
+<img src="assets/img/package3.jpg">
+<div class="card-content">
+<h3>🏖 Goa</h3>
+<p>India</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Nature">
+<img src="assets/img/package2.jpg">
+<div class="card-content">
+<h3>🌴 Kerala</h3>
+<p>God's Own Country</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Beach">
+<img src="assets/img/package6.jpg">
+<div class="card-content">
+<h3>🏝 Andaman Islands</h3>
+<p>India</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Beach">
+<img src="assets/img/pack10.jpg">
+<div class="card-content">
+<h3>🌊 Pondicherry</h3>
+<p>Union Territory</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Heritage">
+<img src="assets/img/pack24.jpg">
+<div class="card-content">
+<h3>🐪 Rajasthan</h3>
+<p>Royal State</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Heritage">
+<img src="assets/img/pack29.jpg">
+<div class="card-content">
+<h3>🏜 Thar Desert</h3>
+<p>Jaisalmer</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Hill">
+<img src="assets/img/package5.jpg">
+<div class="card-content">
+<h3>🏔 Manali</h3>
+<p>Himachal Pradesh</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Hill">
+<img src="assets/img/pack42.jpg">
+<div class="card-content">
+<h3>❄ Shimla</h3>
+<p>Himachal Pradesh</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Nature">
+<img src="assets/img/pack41.jpg">
+<div class="card-content">
+<h3>☕ Coorg</h3>
+<p>Karnataka</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Hill">
+<img src="assets/img/pack43.jpg">
+<div class="card-content">
+<h3>🏔 Mussoorie</h3>
+<p>Uttarakhand</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Hill">
+<img src="assets/img/pack31.jpg">
+<div class="card-content">
+<h3>🚂 Darjeeling</h3>
+<p>West Bengal</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Hill">
+<img src="assets/img/pack44.jpg">
+<div class="card-content">
+<h3>🌸 Gangtok</h3>
+<p>Sikkim</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack25.jpg">
+<div class="card-content">
+<h3>🛕 Varanasi</h3>
+<p>Uttar Pradesh</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack32.jpg">
+<div class="card-content">
+<h3>🛕 Dwarka</h3>
+<p>Gujarat</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack23.jpg">
+<div class="card-content">
+<h3>🚩 Ayodhya</h3>
+<p>Uttar Pradesh</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack20.jpg">
+<div class="card-content">
+<h3>✨ Golden Temple</h3>
+<p>Amritsar</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack7.jpg">
+<div class="card-content">
+<h3>✨ Tirumala Tirpati Temple</h3>
+<p>Tirupati</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack8.jpg">
+<div class="card-content">
+<h3>✨ shrine basilica Velankanni Temple</h3>
+<p>Velankanni</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack4.jpg">
+<div class="card-content">
+<h3>✨ Madurai Temple</h3>
+<p> Madurai </p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+<div class="card Temple">
+<img src="assets/img/pack15.jpg">
+<div class="card-content">
+<h3>✨ Sri Rangam Temple</h3>
+<p> Trichy </p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+
+
+
+
+
+<div class="card International">
+<img src="assets/img/pack27.jpg">
+<div class="card-content">
+<h3>🏝 Sri Lanka</h3>
+<p>International Tour</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
+<a href="booking.html" class="btn">Book Tour</a>
+</div>
+</div>
+</div>
+
+<!-- ================= Statistics ================= -->
+
+<section style="margin-top:70px;padding:60px;background:#009688;color:white;text-align:center;">
+
+<h2 style="font-size:40px;margin-bottom:40px;">
+Our Tourism Achievements
+</h2>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:50px;">
+
+<div>
+<h1>60+</h1>
+<p>Tour Packages</p>
+</div>
+
+<div>
+<h1>150+</h1>
+<p>Destinations</p>
+</div>
+
+<div>
+<h1>10,000+</h1>
+<p>Happy Tourists</p>
+</div>
+
+<div>
+<h1>4.9 ★</h1>
+<p>Customer Rating</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Testimonials ================= -->
+
+<section style="padding:70px 8%;background:#f4f4f4;">
+
+<h2 style="text-align:center;font-size:38px;color:#009688;margin-bottom:50px;">
+What Our Tourists Say
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;">
+
+<div class="card">
+<div class="card-content">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>"Excellent service! Our Ooty trip was perfectly organized. Hotels and transport were excellent."</p>
+<h4>- Rahul, Chennai</h4>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>"Booked a Kerala package. Everything from pickup to sightseeing was well managed."</p>
+<h4>- Priya, Bengaluru</h4>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>"Best family vacation to Kashmir. Highly recommended MI Tourism Development."</p>
+<h4>- Arjun, Hyderabad</h4>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Newsletter ================= -->
+
+<section style="padding:60px;background:#ffffff;text-align:center;">
+
+<h2 style="color:#009688;font-size:36px;">Subscribe to Our Newsletter</h2>
+
+<p style="margin:20px 0;">Get updates about new tour packages and special offers.</p>
+
+<input
+type="email"
+placeholder="Enter your email"
+style="padding:15px;width:350px;border:2px solid #009688;border-radius:5px;font-size:16px;">
+
+<button
+style="padding:15px 30px;background:#009688;color:white;border:none;border-radius:5px;font-size:16px;cursor:pointer;">
+Subscribe
+</button>
+
+</section>
+
+<!-- ================= Contact ================= -->
+
+<section style="padding:70px;background:#e8f5e9;">
+
+<h2 style="text-align:center;color:#009688;font-size:38px;margin-bottom:40px;">
+Contact MI Tourism Development
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;">
+
+<div>
+
+<h3>📍 Address</h3>
+
+<p>
+MI Tourism Development<br>
+Chennai, Tamil Nadu<br>
+India
+</p>
+
+</div>
+
+<div>
+
+<h3>📞 Contact</h3>
+
+<p>
+Phone: +91 70603 70603<br>
+Email: info@mitourism.com
+</p>
+
+</div>
+
+<div>
+
+<h3>🌐 Follow Us</h3>
+
+
+<p> ⓕ𝐟𝐚𝐜𝐞𝐛𝐨𝐨𝐤 </p>
+<p>🅾 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 </p>
+<p>𝕏Twitter</p>
+<p>▶️YouTube🔴</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Footer ================= -->
+
+<footer style="background:#222;color:white;padding:40px;text-align:center;">
+
+<h2>MI Tourism Development</h2>
+
+<p style="margin:15px 0;">
+Discover India • Explore Nature • Create Memories
+</p>
+
+<p>
+
+<a href="HOME.html" style="color:white;text-decoration:none;">Home</a> |
+
+<a href="packages.html" style="color:white;text-decoration:none;">Packages</a> |
+
+<a href="booking.html" style="color:white;text-decoration:none;">Book Tour</a> |
+
+<a href="gallery.html" style="color:white;text-decoration:none;">Gallery</a> |
+
+<a href="contact.html" style="color:white;text-decoration:none;">Contact</a>
+
+</p>
+
+<br>
+
+<p>
+© 2026 MI Tourism Development. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- ================= JavaScript ================= -->
+
+<script>
+
+const searchInput=document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+
+let filter=searchInput.value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+let text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(filter)?"block":"none";
+
+});
+
+});
+
+function filterSelection(category){
+
+let cards=document.querySelectorAll(".gallery .card");
+
+cards.forEach(function(card){
+
+if(category==="all"){
+
+card.style.display="block";
+
+}
+
+else{
+
+card.style.display=card.classList.contains(category)?"block":"none";
+
+}
+
+});
+
+}
+
+document.querySelectorAll(".gallery img").forEach(function(img){
+
+img.style.cursor="pointer";
+
+img.onclick=function(){
+
+let popup=window.open("","_blank");
+
+popup.document.write("<title>Image Preview</title>");
+
+popup.document.write("<body style='margin:0;background:#000;display:flex;justify-content:center;align-items:center;height:100vh;'>");
+
+popup.document.write("<img src='"+this.src+"' style='max-width:95%;max-height:95%;'>");
+
+popup.document.write("</body>");
+
+};
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Book a Tour - MI Tourism Development</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/common.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.header{
+    padding:40px;
+    text-align:center;
+    background:#1abc9c;
+    color:white;
+}
+
+.navbar{
+    overflow:hidden;
+    background-color:#333;
+}
+
+.navbar a{
+    float:left;
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 18px;
+    text-decoration:none;
+}
+
+.navbar a.right{
+    float:right;
+}
+
+.navbar a:hover{
+    background:#1abc9c;
+}
+
+.page-wrap{
+    width:90%;
+    margin:40px auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:38px;
+    color:#1abc9c;
+    margin-bottom:35px;
+}
+
+/* Package Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.package-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.package-card:hover{
+    transform:translateY(-8px);
+}
+
+.package-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.package-card h4{
+    color:#1abc9c;
+    padding:18px 20px 10px;
+    font-size:24px;
+}
+
+.package-card p{
+    padding:0 20px 12px;
+    color:#555;
+    line-height:24px;
+}
+
+.btn{
+    display:block;
+    width:85%;
+    margin:20px auto;
+    padding:14px;
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.btn:hover{
+    background:#16a085;
+}
+
+/* Booking Form */
+.card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    margin-top:40px;
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+}
+
+.card h3{
+    color:#1abc9c;
+    margin-bottom:20px;
+}
+
+.form-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-box label{
+    margin-top:15px;
+    font-weight:bold;
+    color:#333;
+}
+
+.form-box input,
+.form-box select{
+    margin-top:8px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.alert{
+    padding:12px;
+    border-radius:5px;
+    margin-bottom:15px;
+}
+
+.site-footer{
+    margin-top:50px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .navbar a{
+        float:none;
+        width:100%;
+        text-align:left;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1 style="font-family:Arial Black;">MI TOURISM DEVELOPMENT</h1>
+</div>
+
+<div class="navbar">
+    <a href="HOME.html">HOME</a>
+    <a href="hotels.html">HOTELS</a>
+    <a href="packages.html">TOUR PACKAGES</a>
+    <a href="events.html">EVENT PLACES</a>
+    <a href="others.html">WHAT'S OTHERS</a>
+    <a href="search.html">SEARCH</a>
+    <a href="booking.html">BOOK TOUR</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="blog.html">BLOG</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="dashboard.html">DASHBOARD</a>
+    <a href="login.html" class="right">LOGIN</a>
+</div>
+
+<div class="page-wrap">
+
+    <h2 class="section-title">Available Tour Packages</h2>
+
+    <div class="grid" id="packagesGrid"></div>
+
+    <div class="grid">
+
+<div class="package-card">
+<img src="assets/img/pack1.jpg" alt="Ooty">
+<h4>🏔 Ooty Hill Station Tour</h4>
+<p>📍 Ooty</p>
+<p>🗓 3 Days / 2 Nights</p>
+<p><b>₹6,999 / Person</b></p>
+<button class="btn" onclick="selectPackage(1,'Ooty Hill Station Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+<img src="assets/img/pack2.jpg" alt="Kodaikanal">
+<h4>🌄 Kodaikanal Tour</h4>
+<p>📍 Kodaikanal</p>
+<p>🗓 2 Days / 1 Night</p>
+<p><b>₹4,999 / Person</b></p>
+<button class="btn" onclick="selectPackage(2,'Kodaikanal Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+<img src="assets/img/pack3.jpg" alt="Chennai">
+<h4>🏙 Chennai City Tour</h4>
+<p>📍 Chennai</p>
+<p>🗓 1 Day</p>
+<p><b>₹1,999 / Person</b></p>
+<button class="btn" onclick="selectPackage(3,'Chennai City Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+<img src="assets/img/pack4.jpg" alt="Madurai">
+<h4>🛕 Madurai Temple Tour</h4>
+<p>📍 Madurai</p>
+<p>🗓 2 Days</p>
+<p><b>₹3,999 / Person</b></p>
+<button class="btn" onclick="selectPackage(4,'Madurai Temple Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+<img src="assets/img/pack5.jpg" alt="Kanyakumari">
+<h4>🌅 Kanyakumari Tour</h4>
+<p>📍 Kanyakumari</p>
+<p>🗓 3 Days</p>
+<p><b>₹5,999 / Person</b></p>
+<button class="btn" onclick="selectPackage(5,'Kanyakumari Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+<img src="assets/img/pack6.jpg" alt="Rameswaram">
+<h4>🌊 Rameswaram Tour</h4>
+<p>📍 Rameswaram</p>
+<p>🗓 2 Days</p>
+<p><b>₹4,499 / Person</b></p>
+<button class="btn" onclick="selectPackage(6,'Rameswaram Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+<img src="assets/img/pack7.jpg" alt="Tirupati">
+<h4> 🏞️🛕Tirumala Tirupati Tour</h4>
+<p>📍  Tirupati</p>
+<p>🗓 4 Days</p>
+<p><b>₹4,999 / Person</b></p>
+<button class="btn" onclick="selectPackage(7,'Tirupati Tour')">Book Now</button>
+</div>
+
+
+<div class="package-card">
+<img src="assets/img/pack8.jpg" alt="Velankanni ">
+<h4>🌊 Velankanni Tour</h4>
+<p>📍Velankanni </p>
+<p>🗓 3 Days</p>
+<p><b>₹6,499 / Person</b></p>
+<button class="btn" onclick="selectPackage(8,'Velankanni  Tour')">Book Now</button>
+</div>
+
+
+<div class="package-card">
+<img src="assets/img/pack9.jpg" alt="Mysore ">
+<h4>🏰 Mysore Tour</h4>
+<p>📍 Mysore </p>
+<p>🗓 3 Days</p>
+<p><b>₹7,499 / Person</b></p>
+<button class="btn" onclick="selectPackage(9,'Mysore Tour')">Book Now</button>
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack10.jpg" alt="Pondicherry">
+
+<h4>🏖 Pondicherry Tour</h4>
+
+<p>📍 Pondicherry</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹6,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(10,'Pondicherry Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack11.jpg" alt="Mahabalipuram">
+
+<h4>🗿 Mahabalipuram Heritage Tour</h4>
+
+<p>📍 Mahabalipuram</p>
+
+<p>🗓 2 Days</p>
+
+<p><b>₹4,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(11,'Mahabalipuram Heritage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack12.jpg" alt="Kerala">
+
+<h4>🌴 Kerala Backwaters Tour</h4>
+
+<p>📍 Kerala</p>
+
+<p>🗓 5 Days</p>
+
+<p><b>₹12,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(12,'Kerala Backwaters Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/package6.jpg" alt="Andaman Islands">
+
+<h4>🏝 Andaman Islands Tour</h4>
+
+<p>📍 Andaman Islands</p>
+
+<p>🗓 6 Days</p>
+
+<p><b>₹24,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(13,'Andaman Islands Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack14.jpg" alt="Mantralayam">
+
+<h4>🛕 Mantralayam Pilgrimage</h4>
+
+<p>📍 Mantralayam</p>
+
+<p>🗓 2 Days</p>
+
+<p><b>₹3,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(14,'Mantralayam Pilgrimage')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack15.jpg" alt="Trichy">
+
+<h4>🏛 Trichy Temple Tour</h4>
+
+<p>📍 Tiruchirappalli</p>
+
+<p>🗓 2 Days</p>
+
+<p><b>₹4,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(15,'Trichy Temple Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack16.jpg" alt="Shirdi">
+
+<h4>🙏 Shirdi Sai Baba Tour</h4>
+
+<p>📍 Shirdi</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹6,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(16,'Shirdi Sai Baba Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/package5.jpg" alt="Manali">
+
+<h4>🏔 Manali Adventure Tour</h4>
+
+<p>📍 Manali</p>
+
+<p>🗓 5 Days</p>
+
+<p><b>₹15,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(17,'Manali Adventure Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack18.jpg" alt="Delhi">
+
+<h4>🏙 Delhi City Tour</h4>
+
+<p>📍 New Delhi</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹7,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(18,'Delhi City Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack19.jpg" alt="Hyderabad">
+
+<h4>🏰 Hyderabad Heritage Tour</h4>
+
+<p>📍 Hyderabad</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹6,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(19,'Hyderabad Heritage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack20.jpg" alt="Golden Temple">
+
+<h4>✨ Golden Temple Tour</h4>
+
+<p>📍 Amritsar</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹8,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(20,'Golden Temple Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack21.jpg" alt="Leh Ladakh">
+
+<h4>🏍 Leh–Ladakh Expedition</h4>
+
+<p>📍 Leh–Ladakh</p>
+
+<p>🗓 7 Days</p>
+
+<p><b>₹27,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(21,'Leh Ladakh Expedition')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack22.jpg" alt="Dharamshala">
+
+<h4>🏞 Dharamshala Tour</h4>
+
+<p>📍 Dharamshala</p>
+
+<p>🗓 4 Days</p>
+
+<p><b>₹11,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(22,'Dharamshala Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack23.jpg" alt="Ayodhya">
+
+<h4>🛕 Ayodhya Pilgrimage</h4>
+
+<p>📍 Ayodhya</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹5,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(23,'Ayodhya Pilgrimage')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack24.jpg" alt="Rajasthan">
+
+<h4>🐪 Rajasthan Royal Tour</h4>
+
+<p>📍 Rajasthan</p>
+
+<p>🗓 6 Days</p>
+
+<p><b>₹18,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(24,'Rajasthan Royal Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack25.jpg" alt="Varanasi">
+
+<h4>🪔 Varanasi Spiritual Tour</h4>
+
+<p>📍 Varanasi</p>
+
+<p>🗓 3 Days</p>
+
+<p><b>₹7,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(25,'Varanasi Spiritual Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack26.jpg" alt="Haridwar">
+
+<h4>🌊 Haridwar & Rishikesh Tour</h4>
+
+<p>📍 Haridwar</p>
+
+<p>🗓 4 Days</p>
+
+<p><b>₹8,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(26,'Haridwar & Rishikesh Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack27.jpg" alt="Sri Lanka">
+
+<h4>🏝 Sri Lanka Explorer Tour</h4>
+
+<p>📍 Sri Lanka</p>
+
+<p>🗓 6 Days / 5 Nights</p>
+
+<p><b>₹29,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(27,'Sri Lanka Explorer Tour')">
+Book Now
+</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack28.jpg" alt="Taj Mahal">
+
+<h4>🕌 Taj Mahal Heritage Tour</h4>
+
+<p>📍 Agra, Uttar Pradesh</p>
+
+<p>🗓 2 Days / 1 Night</p>
+
+<p><b>₹5,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(28,'Taj Mahal Heritage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack29.jpg" alt="Thar Desert">
+
+<h4>🐪 Rajasthan Thar Desert Safari</h4>
+
+<p>📍 Jaisalmer, Rajasthan</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹14,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(29,'Rajasthan Thar Desert Safari')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack30.jpg" alt="Mumbai">
+
+<h4>🌆 Mumbai City Tour</h4>
+
+<p>📍 Mumbai, Maharashtra</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹8,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(30,'Mumbai City Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack31.jpg" alt="Darjeeling">
+
+<h4>🚂 Darjeeling Tea Valley Tour</h4>
+
+<p>📍 Darjeeling, West Bengal</p>
+
+<p>🗓 5 Days / 4 Nights</p>
+
+<p><b>₹15,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(31,'Darjeeling Tea Valley Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack32.jpg" alt="Dwarka">
+
+<h4>🛕 Dwarka Pilgrimage Tour</h4>
+
+<p>📍 Dwarka, Gujarat</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹7,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(32,'Dwarka Pilgrimage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack33.jpg" alt="Goa">
+
+<h4>🏖 Goa Beach Holiday</h4>
+
+<p>📍 Goa</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹11,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(33,'Goa Beach Holiday')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack34.jpg" alt="Kashmir">
+
+<h4>❄ Kashmir Paradise Tour</h4>
+
+<p>📍 Srinagar, Gulmarg & Pahalgam</p>
+
+<p>🗓 6 Days / 5 Nights</p>
+
+<p><b>₹24,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(34,'Kashmir Paradise Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack35.jpg" alt="Jaipur">
+
+<h4>🏰 Jaipur Pink City Tour</h4>
+
+<p>📍 Jaipur, Rajasthan</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹8,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(35,'Jaipur Pink City Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack36.jpg" alt="Udaipur">
+
+<h4>🚤 Udaipur Lake City Tour</h4>
+
+<p>📍 Udaipur, Rajasthan</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹9,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(36,'Udaipur Lake City Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack37.jpg" alt="Rann of Kutch">
+
+<h4>🤍 Rann of Kutch Tour</h4>
+
+<p>📍 Gujarat</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹13,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(37,'Rann of Kutch Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack38.jpg" alt="Hampi">
+
+<h4>🏛 Hampi Heritage Tour</h4>
+
+<p>📍 Hampi, Karnataka</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹7,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(38,'Hampi Heritage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack39.jpg" alt="Munnar">
+
+<h4>🌿 Munnar Tea Garden Tour</h4>
+
+<p>📍 Munnar, Kerala</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹10,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(39,'Munnar Tea Garden Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack40.jpg" alt="Rishikesh">
+
+<h4>🚣 Rishikesh Adventure Tour</h4>
+
+<p>📍 Rishikesh, Uttarakhand</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹8,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(40,'Rishikesh Adventure Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack41.jpg" alt="Coorg">
+
+<h4>☕ Coorg Nature Tour</h4>
+
+<p>📍 Coorg, Karnataka</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹10,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(41,'Coorg Nature Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack42.jpg" alt="Shimla">
+
+<h4>❄ Shimla Hill Station Tour</h4>
+
+<p>📍 Shimla, Himachal Pradesh</p>
+
+<p>🗓 5 Days / 4 Nights</p>
+
+<p><b>₹14,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(42,'Shimla Hill Station Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack43.jpg" alt="Mussoorie">
+
+<h4>🏔 Mussoorie Queen of Hills Tour</h4>
+
+<p>📍 Mussoorie, Uttarakhand</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹12,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(43,'Mussoorie Queen of Hills Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack44.jpg" alt="Gangtok">
+
+<h4>🌸 Gangtok Himalayan Tour</h4>
+
+<p>📍 Gangtok, Sikkim</p>
+
+<p>🗓 5 Days / 4 Nights</p>
+
+<p><b>₹16,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(44,'Gangtok Himalayan Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack45.jpg" alt="Puri">
+
+<h4>🌊 Puri Jagannath Tour</h4>
+
+<p>📍 Puri, Odisha</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹7,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(45,'Puri Jagannath Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack46.jpg" alt="Wayanad">
+
+<h4>🌿 Wayanad Nature Escape</h4>
+
+<p>📍 Wayanad, Kerala</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹11,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(46,'Wayanad Nature Escape')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack47.jpg" alt="Lakshadweep">
+
+<h4>🏝 Lakshadweep Island Tour</h4>
+
+<p>📍 Lakshadweep</p>
+
+<p>🗓 6 Days / 5 Nights</p>
+
+<p><b>₹29,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(47,'Lakshadweep Island Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack48.jpg" alt="Chittorgarh">
+
+<h4>🏰 Chittorgarh Fort Tour</h4>
+
+<p>📍 Chittorgarh, Rajasthan</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹8,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(48,'Chittorgarh Fort Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack49.jpg" alt="Valley of Flowers">
+
+<h4>🌸 Valley of Flowers Trek</h4>
+
+<p>📍 Uttarakhand</p>
+
+<p>🗓 5 Days / 4 Nights</p>
+
+<p><b>₹17,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(49,'Valley of Flowers Trek')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack50.jpg" alt="Srikalahasti">
+
+<h4>🛕 Srikalahasti Temple Tour</h4>
+
+<p>📍 Srikalahasti, Andhra Pradesh</p>
+
+<p>🗓 2 Days / 1 Night</p>
+
+<p><b>₹3,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(50,'Srikalahasti Temple Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack51.jpg" alt="Lucknow">
+
+<h4>🏛 Lucknow Heritage Tour</h4>
+
+<p>📍 Lucknow, Uttar Pradesh</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹7,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(51,'Lucknow Heritage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack52.jpg" alt="Kolkata">
+
+<h4>🌉 Kolkata Cultural Tour</h4>
+
+<p>📍 Kolkata, West Bengal</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹9,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(52,'Kolkata Cultural Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack53.jpg" alt="Bangalore">
+
+<h4>🌆 Bangalore City Tour</h4>
+
+<p>📍 Bengaluru, Karnataka</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹6,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(53,'Bangalore City Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack54.jpg" alt="Gujarat">
+
+<h4>🦁 Gujarat Heritage Tour</h4>
+
+<p>📍 Ahmedabad • Somnath • Dwarka • Gir</p>
+
+<p>🗓 6 Days / 5 Nights</p>
+
+<p><b>₹18,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(54,'Gujarat Heritage Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack55.jpg" alt="Khajuraho">
+
+<h4>🏛 Khajuraho Temples Tour</h4>
+
+<p>📍 Khajuraho, Madhya Pradesh</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹8,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(55,'Khajuraho Temples Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack56.jpg" alt="Kaziranga">
+
+<h4>🦏 Kaziranga Wildlife Safari</h4>
+
+<p>📍 Kaziranga, Assam</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹15,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(56,'Kaziranga Wildlife Safari')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack57.jpg" alt="Jim Corbett">
+
+<h4>🐅 Jim Corbett National Park</h4>
+
+<p>📍 Uttarakhand</p>
+
+<p>🗓 3 Days / 2 Nights</p>
+
+<p><b>₹11,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(57,'Jim Corbett National Park')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack58.jpg" alt="Statue of Unity">
+
+<h4>🗽 Statue of Unity Tour</h4>
+
+<p>📍 Kevadia, Gujarat</p>
+
+<p>🗓 2 Days / 1 Night</p>
+
+<p><b>₹6,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(58,'Statue of Unity Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack59.jpg" alt="Isha Yoga">
+
+<h4>☀ Isha Yoga Center  Temple Tour</h4>
+
+<p>📍 Velliangiri foothills, Semmedu, Coimbatore</p>
+
+<p>🗓 3 Days </p>
+
+<p><b>₹3,499 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(59,'Isha Yoga Temple Tour')">Book Now</button>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/pack60.jpg" alt="Sundarbans">
+
+<h4>🌿 Sundarbans Mangrove Tour</h4>
+
+<p>📍 West Bengal</p>
+
+<p>🗓 4 Days / 3 Nights</p>
+
+<p><b>₹12,999 / Person</b></p>
+
+<button class="btn" onclick="selectPackage(60,'Sundarbans Mangrove Tour')">Book Now</button>
+
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    &copy; 2026 MI Tourism Development. All Rights Reserved.
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script>
+let selectedPackageId = null;
+
+async function loadPackages() {
+    const res = await apiRequest("/packages");
+    const grid = document.getElementById("packagesGrid");
+
+    if (!res.ok) {
+        grid.innerHTML = "<p>Could not load packages.</p>";
+        return;
+    }
+
+    grid.innerHTML = res.data.packages.map(p => `
+        <div class="package-card">
+            <img src="${p.image_url || 'assets/img/picture1.jpg'}" alt="${p.title}">
+
+            <h4>${p.title}</h4>
+
+            <p><b>📍 Destination:</b> ${p.place_name || ''}</p>
+
+            <p><b>🗓 Duration:</b> ${p.duration_days} Day(s)</p>
+
+            <p><b>💰 Price:</b> ₹${p.price} / Person</p>
+
+            <button class="btn"
+                onclick="selectPackage(${p.id}, '${p.title.replace(/'/g, '')}')">
+                Book Now
+            </button>
+        </div>
+    `).join('');
+
+    // Auto-select package from search page
+    const urlParams = new URLSearchParams(window.location.search);
+    const placeId = urlParams.get("place_id");
+
+    if (placeId) {
+        const match = res.data.packages.find(p => String(p.place_id) === placeId);
+        if (match) selectPackage(match.id, match.title);
+    }
+}
+
+function selectPackage(id, title) {
+    if (!Auth.isLoggedIn()) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    selectedPackageId = id;
+    document.getElementById("selectedPackageTitle").textContent = title;
+    document.getElementById("bookingFormCard").style.display = "block";
+    document.getElementById("bookingFormCard").scrollIntoView({ behavior: "smooth" });
+}
+
+document.getElementById("bookingForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const body = {
+        package_id: selectedPackageId,
+        travel_date: document.getElementById("travel_date").value,
+        members: document.getElementById("members").value,
+        vehicle_type: document.getElementById("vehicle_type").value,
+        hotel_type: document.getElementById("hotel_type").value
+    };
+
+    const res = await apiRequest("/bookings", { method:"POST", body });
+
+    if (!res.ok) {
+        alert("Booking failed.");
+        return;
+    }
+
+    window.location.href = `payment.html?booking_id=${res.data.booking_id}`;
+});
+
+loadPackages();
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tourism News | MI Tourism Development</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f7fa;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+background:#1abc9c;
+color:white;
+text-align:center;
+padding:22px;
+
+}
+
+.header h1{
+
+font-size:42px;
+
+}
+
+.header p{
+
+margin-top:10px;
+font-size:18px;
+
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+
+background:#333;
+overflow:hidden;
+
+}
+
+.navbar a{
+
+float:left;
+color:white;
+text-decoration:none;
+padding:15px 18px;
+transition:.3s;
+
+}
+
+.navbar a:hover{
+
+background:#1abc9c;
+
+}
+
+.navbar .right{
+
+float:right;
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+height:450px;
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("assets/img/news-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+color:white;
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:60px;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+width:70%;
+font-size:21px;
+line-height:34px;
+
+}
+
+.hero button{
+
+margin-top:30px;
+padding:15px 35px;
+
+background:#1abc9c;
+
+border:none;
+
+color:white;
+
+font-size:18px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+.hero button:hover{
+
+background:#16a085;
+
+}
+
+/* ================= BREAKING NEWS ================= */
+
+.breaking{
+
+background:#ff5252;
+color:white;
+padding:15px;
+font-size:18px;
+font-weight:bold;
+
+overflow:hidden;
+
+}
+
+.breaking marquee{
+
+font-size:18px;
+
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+
+text-align:center;
+margin:40px;
+
+}
+
+.search-box input{
+
+width:60%;
+padding:15px;
+
+font-size:18px;
+
+border:2px solid #1abc9c;
+
+border-radius:30px;
+
+outline:none;
+
+}
+
+/* ================= TITLE ================= */
+
+.section-title{
+
+text-align:center;
+font-size:38px;
+margin:40px;
+color:#333;
+
+}
+
+/* ================= NEWS GRID ================= */
+
+.news-section{
+
+width:92%;
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+gap:30px;
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+background:white;
+
+border-radius:10px;
+
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.content{
+
+padding:20px;
+
+}
+
+.content h3{
+
+color:#1abc9c;
+margin-bottom:10px;
+
+}
+
+.content p{
+
+color:#555;
+line-height:28px;
+
+}
+
+.date{
+
+margin-top:10px;
+color:#888;
+font-size:14px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:10px 20px;
+
+background:#1abc9c;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:5px;
+
+}
+
+.btn:hover{
+
+background:#16a085;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero p{
+
+width:90%;
+font-size:18px;
+
+}
+
+.search-box input{
+
+width:90%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>MI Tourism Development</h1>
+
+<p>Latest Tourism News From India & Around the World</p>
+
+</div>
+
+<div class="navbar">
+
+<a href="HOME.html">HOME</a>
+<a href="hotels.html">HOTELS</a>
+<a href="packages.html">TOUR PACKAGES</a>
+<a href="events.html">EVENT PLACES</a>
+<a href="others.html">WHAT'S OTHERS</a>
+<a href="search.html">SEARCH</a>
+<a href="booking.html">BOOK TOUR</a>
+<a href="gallery.html">GALLERY</a>
+<a href="blog.html">BLOG</a>
+<a href="news.html">NEWS</a>
+<a href="contact.html">CONTACT</a>
+<a href="dashboard.html">DASHBOARD</a>
+<a href="login.html" class="right">LOGIN</a>
+
+</div>
+
+<section class="hero">
+
+<h1>Tourism News & Updates</h1>
+
+<p>
+
+Stay informed with the latest tourism developments,
+travel advisories, destination highlights,
+festival announcements and exciting travel opportunities.
+
+</p>
+
+<button onclick="location.href='packages.html'">
+
+Explore Packages
+
+</button>
+
+</section>
+
+<div class="breaking">
+
+<marquee behavior="scroll" direction="left">
+
+🔥 Kerala Tourism welcomes record visitors • Goa Beach Festival begins next month •
+🏔 Kashmir receives heavy snowfall attracting thousands of tourists •
+🛕 Ayodhya pilgrimage tourism continues to grow •
+✈ Sri Lanka launches new tourism campaign.
+
+</marquee>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchNews"
+placeholder="Search Tourism News...">
+
+</div>
+
+<h2 class="section-title">
+
+Latest Tourism News
+
+</h2>
+
+<section class="news-section">
+<!-- News Card 1 -->
+<div class="card">
+<img src="assets/img/news1.jpg" alt="Kerala">
+<div class="content">
+<h3>🌴 Kerala Tourism Records Highest Visitors</h3>
+<p>Kerala welcomed a record number of domestic and international tourists this season. Backwaters, beaches and eco-tourism remain major attractions.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 2 -->
+<div class="card">
+<img src="assets/img/news2.jpg" alt="Goa">
+<div class="content">
+<h3>🏖 Goa Beach Festival 2026 Announced</h3>
+<p>Goa Tourism has announced its annual Beach Festival featuring music concerts, food festivals, water sports and cultural events.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 3 -->
+<div class="card">
+<img src="assets/img/news3.jpg" alt="Kashmir">
+<div class="content">
+<h3>🏔 Kashmir Winter Tourism Booms</h3>
+<p>Heavy snowfall in Gulmarg and Pahalgam attracts thousands of tourists for skiing, snowboarding and winter vacations.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 4 -->
+<div class="card">
+<img src="assets/img/news4.jpg" alt="Ayodhya">
+<div class="content">
+<h3>🛕 Ayodhya Pilgrimage Tourism Grows</h3>
+<p>Improved infrastructure and transport facilities continue to increase the number of pilgrims visiting Ayodhya.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 5 -->
+<div class="card">
+<img src="assets/img/news5.jpg" alt="Ladakh">
+<div class="content">
+<h3>🏍 Leh-Ladakh Adventure Season Begins</h3>
+<p>Thousands of bikers and trekkers have started their Himalayan adventure tours across the beautiful Ladakh region.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 6 -->
+<div class="card">
+<img src="assets/img/news6.jpg" alt="Sri Lanka">
+<div class="content">
+<h3>✈ Sri Lanka Introduces New Travel Packages</h3>
+<p>New holiday packages and easier visa procedures are attracting more international tourists to Sri Lanka.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 7 -->
+<div class="card">
+<img src="assets/img/news7.jpg" alt="Taj Mahal">
+<div class="content">
+<h3>🕌 Taj Mahal Night Viewing Extended</h3>
+<p>Visitors can now enjoy extended night-viewing sessions at the Taj Mahal during selected full moon nights.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 8 -->
+<div class="card">
+<img src="assets/img/news8.jpg" alt="Rajasthan">
+<div class="content">
+<h3>🐪 Rajasthan Desert Festival Returns</h3>
+<p>The famous desert festival returns with camel races, folk dances, handicrafts and traditional Rajasthani cuisine.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 9 -->
+<div class="card">
+<img src="assets/img/news9.jpg" alt="Andaman">
+<div class="content">
+<h3>🏝 Andaman Tourism Sees Huge Growth</h3>
+<p>Scuba diving, snorkeling and island cruises continue to make the Andaman Islands one of India's top beach destinations.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 10 -->
+<div class="card">
+<img src="assets/img/news10.jpg" alt="Kaziranga">
+<div class="content">
+<h3>🦏 Kaziranga National Park Opens Safari</h3>
+<p>Wildlife enthusiasts can now enjoy jeep safaris to spot the famous one-horned rhinoceros in Assam.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 11 -->
+<div class="card">
+<img src="assets/img/news11.jpg" alt="Golden Temple">
+<div class="content">
+<h3>✨ Golden Temple Welcomes Millions</h3>
+<p>Amritsar continues to attract pilgrims and tourists from across the world with improved visitor facilities.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 12 -->
+<div class="card">
+<img src="assets/img/news12.jpg" alt="Coorg">
+<div class="content">
+<h3>☕ Coorg Coffee Festival Announced</h3>
+<p>Tourists can experience coffee plantations, local cuisine and cultural events during the annual Coorg festival.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 13 -->
+<div class="card">
+<img src="assets/img/news13.jpg" alt="Manali">
+<div class="content">
+<h3>🏔 Manali Adventure Sports Gain Popularity</h3>
+<p>Paragliding, river rafting and trekking continue to attract young travelers to Manali.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 14 -->
+<div class="card">
+<img src="assets/img/news14.jpg" alt="Varanasi">
+<div class="content">
+<h3>🪔 Varanasi Ganga Aarti Draws Tourists</h3>
+<p>Evening Ganga Aarti ceremonies continue to be one of India's most visited spiritual attractions.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 15 -->
+<div class="card">
+<img src="assets/img/news15.jpg" alt="Lakshadweep">
+<div class="content">
+<h3>🌊 Lakshadweep Tourism Expands</h3>
+<p>New island cruises and eco-tourism packages are helping Lakshadweep become a popular beach destination.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 16 -->
+<div class="card">
+<img src="assets/img/news16.jpg" alt="Tirupati">
+<div class="content">
+<h3>🛕 Tirupati Temple Welcomes Record Devotees</h3>
+<p>Tirumala Tirupati Devasthanams continues to receive lakhs of pilgrims every month, with improved darshan facilities and tourism services.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 17 -->
+<div class="card">
+<img src="assets/img/news17.jpg" alt="Madurai">
+<div class="content">
+<h3>🌸 Madurai Meenakshi Temple Tourism Flourishes</h3>
+<p>The historic Meenakshi Amman Temple continues to attract visitors from across India and abroad, boosting cultural and heritage tourism.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+<!-- News Card 18 -->
+<div class="card">
+<img src="assets/img/news18.jpg" alt="Srirangam">
+<div class="content">
+<h3>🏛 Srirangam Temple Sees Increased Tourist Footfall</h3>
+<p>Sri Ranganathaswamy Temple in Srirangam welcomes thousands of pilgrims daily, with special festivals drawing devotees from around the world.</p>
+<p class="date">📅 August 2026</p>
+<a href="#" class="btn">Read More</a>
+</div>
+</div>
+
+</section>
+
+<!-- ================= TRENDING NEWS ================= -->
+
+<section style="background:#ecf0f1;padding:60px 8%;margin-top:50px;">
+
+<h2 style="text-align:center;color:#1abc9c;font-size:38px;margin-bottom:40px;">
+🔥 Trending Tourism Updates
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;">
+
+<div class="card">
+<div class="content">
+<h3>🏔 Kashmir</h3>
+<p>Snow tourism continues to attract thousands of visitors every week.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="content">
+<h3>🏖 Goa</h3>
+<p>Beach Carnival preparations are in full swing with exciting events.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="content">
+<h3>🌴 Kerala</h3>
+<p>Houseboat bookings are at an all-time high during the holiday season.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section style="padding:60px;text-align:center;background:white;">
+
+<h2 style="color:#1abc9c;font-size:36px;">
+📧 Subscribe for Latest Tourism News
+</h2>
+
+<p style="margin:20px 0;color:#555;">
+Receive travel updates, offers and destination news directly in your inbox.
+</p>
+
+<input
+type="email"
+placeholder="Enter your Email Address"
+style="padding:15px;width:350px;border:2px solid #1abc9c;border-radius:5px;font-size:16px;">
+
+<button
+style="padding:15px 30px;background:#1abc9c;color:white;border:none;border-radius:5px;font-size:16px;cursor:pointer;">
+Subscribe
+</button>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section style="background:#e8f8f5;padding:60px;">
+
+<h2 style="text-align:center;color:#1abc9c;font-size:38px;margin-bottom:40px;">
+📞 Contact MI Tourism Development
+</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;">
+
+<div>
+
+<h3>📍 Office</h3>
+
+<p>
+MI Tourism Development<br>
+Chennai, Tamil Nadu<br>
+India
+</p>
+
+</div>
+
+<div>
+
+<h3>☎ Phone</h3>
+
+<p>
++91 70603 70603
+</p>
+
+<h3>📧 Email</h3>
+
+<p>
+info@mitourism.com
+</p>
+
+</div>
+
+<div>
+
+<h3>🌐 Follow Us</h3>
+
+<p>
+<p> ⓕ𝐟𝐚𝐜𝐞𝐛𝐨𝐨𝐤 </p>
+<p>🅾 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 </p>
+<p>𝕏Twitter</p>
+<p>▶️YouTube🔴</p>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="background:#222;color:white;padding:40px;text-align:center;">
+
+<h2>MI Tourism Development</h2>
+
+<p style="margin:15px 0;">
+Explore India • Experience Nature • Create Memories
+</p>
+
+<p>
+
+<a href="HOME.html" style="color:white;text-decoration:none;">Home</a> |
+
+<a href="packages.html" style="color:white;text-decoration:none;">Packages</a> |
+
+<a href="gallery.html" style="color:white;text-decoration:none;">Gallery</a> |
+
+<a href="booking.html" style="color:white;text-decoration:none;">Book Tour</a> |
+
+<a href="contact.html" style="color:white;text-decoration:none;">Contact</a>
+
+</p>
+
+<br>
+
+<p>
+© 2026 MI Tourism Development. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const searchInput=document.getElementById("searchNews");
+
+searchInput.addEventListener("keyup",function(){
+
+let filter=searchInput.value.toLowerCase();
+
+let cards=document.querySelectorAll(".news-section .card");
+
+cards.forEach(function(card){
+
+let text=card.innerText.toLowerCase();
+
+if(text.includes(filter))
+card.style.display="block";
+else
+card.style.display="none";
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Event Places | MI Tourism Development</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+/* Header */
+
+.header{
+background:#1abc9c;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.header h1{
+font-size:40px;
+}
+
+.header p{
+margin-top:10px;
+font-size:18px;
+}
+
+/* Navbar */
+
+.navbar{
+background:#333;
+overflow:hidden;
+}
+
+.navbar a{
+float:left;
+display:block;
+color:white;
+padding:15px 18px;
+text-decoration:none;
+}
+
+.navbar a:hover{
+background:#1abc9c;
+}
+
+.navbar .right{
+float:right;
+}
+
+/* Hero */
+
+.hero{
+
+height:450px;
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+
+url("assets/images/events-banner.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+width:70%;
+
+line-height:35px;
+
+}
+
+.hero button{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:#1abc9c;
+
+border:none;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}
+
+.hero button:hover{
+
+background:#16a085;
+
+}
+
+/* Section */
+
+.section-title{
+
+text-align:center;
+
+margin:50px;
+
+color:#333;
+
+font-size:35px;
+
+}
+
+/* Categories */
+
+.categories{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+width:90%;
+
+margin:auto;
+
+}
+
+.category{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.category:hover{
+
+transform:translateY(-8px);
+
+}
+
+.category h3{
+
+margin:15px 0;
+
+color:#1abc9c;
+
+}
+
+.category p{
+
+line-height:28px;
+
+}
+
+/* Cards */
+
+.cards{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px;
+
+}
+
+.card{
+
+width:340px;
+
+background:white;
+
+border-radius:10px;
+
+overflow:hidden;
+
+box-shadow:0 0 12px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+.content{
+
+padding:20px;
+
+}
+
+.content h3{
+
+color:#1abc9c;
+
+margin-bottom:10px;
+
+}
+
+.content p{
+
+line-height:28px;
+
+color:#555;
+
+}
+
+.date{
+
+margin:15px 0;
+
+font-weight:bold;
+
+color:#e74c3c;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+background:#1abc9c;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:5px;
+
+}
+
+.btn:hover{
+
+background:#16a085;
+
+}
+
+/* Highlights */
+
+.highlights{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+width:90%;
+
+margin:60px auto;
+
+}
+
+.highlight{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.15);
+
+}
+
+.highlight h2{
+
+color:#1abc9c;
+
+margin-bottom:10px;
+
+}
+
+.highlight p{
+
+line-height:28px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.categories{
+
+grid-template-columns:1fr;
+
+}
+
+.highlights{
+
+grid-template-columns:1fr;
+
+}
+
+.cards{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+width:90%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>MI Tourism Development</h1>
+
+<p>Experience India's Festivals, Culture & Celebrations</p>
+
+</div>
+
+<div class="navbar">
+
+<a href="HOME.html">HOME</a>
+<a href="hotels.html">HOTELS</a>
+<a href="packages.html">TOUR PACKAGES</a>
+<a href="events.html">EVENT PLACES</a>
+<a href="others.html">WHAT'S OTHERS</a>
+<a href="search.html">SEARCH</a>
+<a href="booking.html">BOOK TOUR</a>
+<a href="gallery.html">GALLERY</a>
+<a href="blog.html">BLOG</a>
+<a href="news.html">NEWS</a>
+<a href="contact.html">CONTACT</a>
+<a href="dashboard.html">DASHBOARD</a>
+<a href="login.html" class="right">LOGIN</a>
+
+</div>
+
+<section class="hero">
+
+<h1>Celebrate India's Incredible Events</h1>
+
+<p>
+
+Discover cultural festivals, temple celebrations,
+music concerts, food festivals, beach carnivals,
+and adventure events happening across India.
+
+</p>
+
+<button onclick="location.href='booking.html'">
+
+Book Event Tour
+
+</button>
+
+</section>
+
+<h2 class="section-title">
+
+Event Categories
+
+</h2>
+
+<div class="categories">
+
+<div class="category">
+
+<h3>🎭 Cultural Festivals</h3>
+
+<p>
+
+Traditional dance, music,
+folk arts and cultural celebrations.
+
+</p>
+
+</div>
+
+<div class="category">
+
+<h3>🛕 Religious Festivals</h3>
+
+<p>
+
+Temple festivals,
+spiritual events and pilgrimages.
+
+</p>
+
+</div>
+
+<div class="category">
+
+<h3>🏖 Beach Festivals</h3>
+
+<p>
+
+Beach parties,
+water sports and summer festivals.
+
+</p>
+
+</div>
+
+<div class="category">
+
+<h3>🏔 Adventure Events</h3>
+
+<p>
+
+Trekking,
+camping and mountain adventures.
+
+</p>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Upcoming Events
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="assets/img/event1.jpg">
+
+<div class="content">
+
+<h3>Pongal Festival</h3>
+
+<p>
+
+Celebrate Tamil Nadu's harvest festival with
+traditional food, dance and village events.
+
+</p>
+
+<div class="date">
+
+📅 January
+
+</div>
+
+<a href="booking.html" class="btn">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/img/event2.jpg">
+
+<div class="content">
+
+<h3>Goa Carnival</h3>
+
+<p>
+
+Experience colorful parades,
+music performances and beach celebrations.
+
+</p>
+
+<div class="date">
+
+📅 February
+
+</div>
+
+<a href="booking.html" class="btn">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/img/event3.jpg">
+
+<div class="content">
+
+<h3>Mysore Dasara</h3>
+
+<p>
+
+Witness royal processions,
+cultural shows and illuminated palaces.
+
+</p>
+
+<div class="date">
+
+📅 October
+
+</div>
+
+<a href="booking.html" class="btn">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Why Choose Our Event Tours?
+
+</h2>
+
+<div class="highlights">
+
+<div class="highlight">
+
+<h2>100+</h2>
+
+<p>Festivals Covered</p>
+
+</div>
+
+<div class="highlight">
+
+<h2>50+</h2>
+
+<p>Expert Guides</p>
+
+</div>
+
+<div class="highlight">
+
+<h2>24×7</h2>
+
+<p>Customer Support</p>
+
+</div>
+
+<div class="highlight">
+
+<h2>5000+</h2>
+
+<p>Happy Travelers</p>
+
+</div>
+
+</div>
+
+<!-- PART 2 STARTS HERE -->
+<!-- ================= EVENT CALENDAR ================= -->
+
+<h2 class="section-title">Upcoming Event Calendar</h2>
+
+<div style="width:90%;margin:auto;overflow-x:auto;">
+
+<table style="width:100%;border-collapse:collapse;background:white;box-shadow:0 0 12px rgba(0,0,0,.15);">
+
+<tr style="background:#1abc9c;color:white;">
+
+<th style="padding:15px;">Month</th>
+<th>Festival / Event</th>
+<th>Location</th>
+<th>Status</th>
+
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">January</td>
+<td>Pongal Festival</td>
+<td>Chennai</td>
+<td style="color:green;">Open</td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">February</td>
+<td>Goa Carnival</td>
+<td>Goa</td>
+<td style="color:green;">Open</td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">March</td>
+<td>Holi Festival</td>
+<td>Mathura</td>
+<td style="color:green;">Open</td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">July</td>
+<td>Aadi Festival</td>
+<td>Madurai</td>
+<td style="color:orange;">Booking Soon</td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">October</td>
+<td>Mysore Dasara</td>
+<td>Mysore</td>
+<td style="color:green;">Open</td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">November</td>
+<td>Diwali Celebration</td>
+<td>Delhi</td>
+<td style="color:green;">Open</td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">December</td>
+<td>Christmas Festival</td>
+<td>Goa</td>
+<td style="color:green;">Open</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- ================= EVENT REGISTRATION ================= -->
+
+<h2 class="section-title">
+
+Book Your Event Tour
+
+</h2>
+
+<div style="width:80%;margin:auto;background:white;padding:35px;border-radius:10px;box-shadow:0 0 12px rgba(0,0,0,.15);">
+
+<form action="booking.html" method="get">
+
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+
+<input type="text"
+placeholder="Full Name"
+required
+style="padding:12px;">
+
+<input type="email"
+placeholder="Email Address"
+required
+style="padding:12px;">
+
+<input type="tel"
+placeholder="Mobile Number"
+required
+style="padding:12px;">
+
+<select style="padding:12px;">
+
+<option>Select Event</option>
+
+<option>Pongal Festival</option>
+
+<option>Goa Carnival</option>
+
+<option>Mysore Dasara</option>
+
+<option>Holi Festival</option>
+
+<option>Diwali Festival</option>
+
+<option>Christmas Festival</option>
+
+</select>
+
+<input type="date" style="padding:12px;">
+
+<select style="padding:12px;">
+
+<option>Number of Persons</option>
+
+<option>1</option>
+
+<option>2</option>
+
+<option>3</option>
+
+<option>4</option>
+
+<option>5+</option>
+
+</select>
+
+</div>
+
+<textarea
+placeholder="Additional Requirements"
+style="width:100%;height:120px;margin-top:20px;padding:15px;"></textarea>
+
+<br><br>
+
+<button
+type="submit"
+style="background:#1abc9c;color:white;padding:15px 35px;border:none;border-radius:5px;font-size:18px;cursor:pointer;">
+
+Book Event
+
+</button>
+
+</form>
+
+</div>
+
+<!-- ================= FESTIVAL GALLERY ================= -->
+
+<h2 class="section-title">
+
+Festival Gallery
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="assets/img/gallery-event1.png">
+
+<div class="content">
+
+<h3>Pongal Celebration</h3>
+
+<p>
+
+Traditional village celebration with dance,
+music and delicious Pongal feast.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/img/gallery-event2.png">
+
+<div class="content">
+
+<h3>Goa Carnival</h3>
+
+<p>
+
+Grand parade with colourful costumes,
+live music and beach celebrations.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/img/gallery-event3.png">
+
+<div class="content">
+
+<h3>Mysore Palace</h3>
+
+<p>
+
+Magnificent palace illuminated during
+Dasara festival celebrations.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===== FINAL PART STARTS HERE ===== -->

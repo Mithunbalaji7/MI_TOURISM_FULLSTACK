@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Packages | MI Tourism Development</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+/* Header */
+
+.header{
+background:#1abc9c;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.header h1{
+font-size:40px;
+}
+
+.header p{
+margin-top:10px;
+}
+
+/* Navigation */
+
+.navbar{
+background:#333;
+overflow:hidden;
+}
+
+.navbar a{
+float:left;
+color:white;
+text-decoration:none;
+padding:15px 18px;
+font-size:15px;
+}
+
+.navbar a:hover{
+background:#1abc9c;
+}
+
+.navbar a.right{
+float:right;
+}
+
+/* Hero */
+
+.hero{
+
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("assets/images/package-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+height:430px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+color:white;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+width:70%;
+
+line-height:35px;
+
+}
+
+.hero button{
+
+margin-top:30px;
+
+padding:15px 35px;
+
+background:#1abc9c;
+
+border:none;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}
+
+.hero button:hover{
+
+background:#16a085;
+
+}
+
+/* Search */
+
+.search-section{
+
+width:90%;
+
+margin:40px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 0 12px rgba(0,0,0,.15);
+
+}
+
+.search-section h2{
+
+margin-bottom:20px;
+
+color:#333;
+
+}
+
+.search-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.search-grid input,
+
+.search-grid select{
+
+padding:12px;
+
+border:1px solid #ccc;
+
+border-radius:5px;
+
+font-size:15px;
+
+}
+
+.search-btn{
+
+margin-top:25px;
+
+padding:14px 35px;
+
+background:#1abc9c;
+
+color:white;
+
+border:none;
+
+font-size:16px;
+
+cursor:pointer;
+
+border-radius:5px;
+
+}
+
+.search-btn:hover{
+
+background:#16a085;
+
+}
+
+/* Section */
+
+.section-title{
+
+text-align:center;
+
+margin:50px 0;
+
+font-size:35px;
+
+color:#333;
+
+}
+
+/* Cards */
+
+.package-container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px;
+
+}
+
+.package-card{
+
+width:360px;
+
+background:white;
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:0 5px 18px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.package-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.package-card img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+.package-content{
+
+padding:20px;
+
+}
+
+.package-content h3{
+
+color:#1abc9c;
+
+margin-bottom:12px;
+
+}
+
+.package-content p{
+
+line-height:28px;
+
+color:#555;
+
+}
+
+.price{
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#e74c3c;
+
+margin:20px 0;
+
+}
+
+.rating{
+
+color:#f39c12;
+
+font-size:18px;
+
+margin-bottom:10px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+background:#1abc9c;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:5px;
+
+margin-top:10px;
+
+}
+
+.btn:hover{
+
+background:#16a085;
+
+}
+
+/* Highlights */
+
+.highlights{
+
+margin:60px auto;
+
+width:90%;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.highlight-box{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.15);
+
+}
+
+.highlight-box h3{
+
+margin:15px 0;
+
+color:#1abc9c;
+
+}
+
+.highlight-box p{
+
+color:#666;
+
+line-height:28px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.search-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.highlights{
+
+grid-template-columns:1fr;
+
+}
+
+.package-container{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+width:90%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>MI Tourism Development</h1>
+
+<p>Explore Incredible Tour Packages Across India</p>
+
+</div>
+
+<div class="navbar">
+
+<a href="HOME.html">HOME</a>
+
+<a href="hotels.html">HOTELS</a>
+
+<a href="packages.html">TOUR PACKAGES</a>
+
+<a href="events.html">EVENT PLACES</a>
+
+<a href="others.html">WHAT'S OTHERS</a>
+
+<a href="search.html">SEARCH</a>
+
+<a href="booking.html">BOOK TOUR</a>
+
+<a href="gallery.html">GALLERY</a>
+
+<a href="blog.html">BLOG</a>
+
+<a href="news.html">NEWS</a>
+
+<a href="contact.html">CONTACT</a>
+
+<a href="dashboard.html">DASHBOARD</a>
+
+<a href="login.html" class="right">LOGIN</a>
+
+</div>
+
+<section class="hero">
+
+<h1>Discover Your Next Adventure</h1>
+
+<p>
+
+Choose from our handpicked domestic and international tour packages.
+
+Experience unforgettable journeys with luxury stays, expert guides,
+
+comfortable transport, and exciting sightseeing.
+
+</p>
+
+<button onclick="location.href='booking.html'">
+
+Book Your Dream Tour
+
+</button>
+
+</section>
+
+<section class="search-section">
+
+<h2>Find Your Perfect Package</h2>
+
+<div class="search-grid">
+
+<input type="text" placeholder="Destination">
+
+<select>
+
+<option>Select Package Type</option>
+
+<option>Family Tour</option>
+
+<option>Honeymoon</option>
+
+<option>Adventure</option>
+
+<option>Pilgrimage</option>
+
+<option>Wildlife</option>
+
+</select>
+
+<input type="date">
+
+<select>
+
+<option>Budget</option>
+
+<option>₹10,000 - ₹20,000</option>
+
+<option>₹20,000 - ₹40,000</option>
+
+<option>₹40,000+</option>
+
+</select>
+
+</div>
+
+<button class="search-btn">
+
+Search Packages
+
+</button>
+
+</section>
+
+<h2 class="section-title">
+
+Featured Tour Packages
+
+</h2>
+
+<div class="package-container">
+
+<div class="package-card">
+
+<img src="assets/img/package1.jpg">
+
+<div class="package-content">
+
+<h3>Ooty & Coonoor Escape</h3>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+<p>
+
+4 Days • 3 Nights
+
+<br>
+
+Luxury Hotel Stay
+
+<br>
+
+Meals Included
+
+<br>
+
+Sightseeing Included
+
+</p>
+
+<div class="price">
+
+₹18,999
+
+</div>
+
+<a href="booking.html" class="btn">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/package2.jpg">
+
+<div class="package-content">
+
+<h3>Kerala Backwaters</h3>
+
+<div class="rating">
+
+★★★★★
+
+</div>
+
+<p>
+
+5 Days • 4 Nights
+
+<br>
+
+Houseboat Experience
+
+<br>
+
+Breakfast Included
+
+<br>
+
+Airport Pickup
+
+</p>
+
+<div class="price">
+
+₹24,999
+
+</div>
+
+<a href="booking.html" class="btn">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+<div class="package-card">
+
+<img src="assets/img/package3.jpg">
+
+<div class="package-content">
+
+<h3>Goa Beach Holiday</h3>
+
+<div class="rating">
+
+★★★★☆
+
+</div>
+
+<p>
+
+3 Days • 2 Nights
+
+<br>
+
+Beach Resort
+
+<br>
+
+Free Breakfast
+
+<br>
+
+Water Sports
+
+</p>
+
+<div class="price">
+
+₹15,499
+
+</div>
+
+<a href="booking.html" class="btn">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="highlights">
+
+<div class="highlight-box">
+
+<h3>100+ Destinations</h3>
+
+<p>
+
+Domestic and International tour packages.
+
+</p>
+
+</div>
+
+<div class="highlight-box">
+
+<h3>Best Price</h3>
+
+<p>
+
+Affordable pricing with premium services.
+
+</p>
+
+</div>
+
+<div class="highlight-box">
+
+<h3>24×7 Support</h3>
+
+<p>
+
+Travel experts available anytime.
+
+</p>
+
+</div>
+
+<div class="highlight-box">
+
+<h3>Safe Travel</h3>
+
+<p>
+
+Verified hotels and trusted transport partners.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- PART 2 STARTS HERE -->
+<!-- ================= PREMIUM TOUR PACKAGES ================= -->
+
+<h2 class="section-title">Premium Holiday Packages</h2>
+
+<div class="package-container">
+
+<div class="package-card">
+<img src="assets/img/package4.jpg" alt="Kodaikanal">
+<div class="package-content">
+<h3>Kodaikanal Family Tour</h3>
+<div class="rating">★★★★★</div>
+
+<p>
+5 Days • 4 Nights<br>
+Luxury Resort Stay<br>
+Breakfast & Dinner<br>
+Local Sightseeing Included
+</p>
+
+<div class="price">₹22,999</div>
+
+<a href="booking.html" class="btn">
+Book Now
+</a>
+
+</div>
+</div>
+
+<div class="package-card">
+<img src="assets/img/package5.jpg" alt="Manali">
+<div class="package-content">
+<h3>Manali Adventure Tour</h3>
+<div class="rating">★★★★★</div>
+
+<p>
+6 Days • 5 Nights<br>
+Adventure Activities<br>
+Snow Point Visit<br>
+Volvo Transport
+</p>
+
+<div class="price">₹31,999</div>
+
+<a href="booking.html" class="btn">
+Book Now
+</a>
+
+</div>
+</div>
+
+<div class="package-card">
+<img src="assets/img/package6.jpg" alt="Andaman">
+<div class="package-content">
+<h3>Andaman Island Tour</h3>
+<div class="rating">★★★★★</div>
+
+<p>
+5 Days • 4 Nights<br>
+Beach Resort Stay<br>
+Scuba Diving Included<br>
+Island Cruise
+</p>
+
+<div class="price">₹39,999</div>
+
+<a href="booking.html" class="btn">
+Book Now
+</a>
+
+</div>
+</div>
+
+</div>
+
+<!-- ================= SAMPLE ITINERARY ================= -->
+
+<h2 class="section-title">
+Sample 5-Day Tour Itinerary
+</h2>
+
+<div style="width:90%;margin:auto;">
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-left:6px solid #1abc9c;box-shadow:0 0 8px rgba(0,0,0,.1);">
+<h3>Day 1 - Arrival</h3>
+<p>Airport/Railway Station pickup, hotel check-in, evening city tour and welcome dinner.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-left:6px solid #1abc9c;box-shadow:0 0 8px rgba(0,0,0,.1);">
+<h3>Day 2 - Sightseeing</h3>
+<p>Visit famous tourist attractions with professional guide and local transportation.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-left:6px solid #1abc9c;box-shadow:0 0 8px rgba(0,0,0,.1);">
+<h3>Day 3 - Adventure Activities</h3>
+<p>Enjoy trekking, boating, photography and optional adventure sports.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-left:6px solid #1abc9c;box-shadow:0 0 8px rgba(0,0,0,.1);">
+<h3>Day 4 - Local Shopping</h3>
+<p>Explore local markets, handicrafts, cultural programs and food streets.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-left:6px solid #1abc9c;box-shadow:0 0 8px rgba(0,0,0,.1);">
+<h3>Day 5 - Departure</h3>
+<p>Breakfast, hotel checkout and transfer to Airport/Railway Station.</p>
+</div>
+
+</div>
+
+<!-- ================= PACKAGE INCLUSIONS ================= -->
+
+<h2 class="section-title">
+Package Includes
+</h2>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:40px;width:90%;margin:auto;">
+
+<div style="background:white;padding:25px;width:420px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<h3 style="color:#1abc9c;">Included</h3>
+
+<ul style="margin-top:20px;line-height:35px;font-size:17px;">
+
+<li>✔ Luxury Hotel Accommodation</li>
+
+<li>✔ Daily Breakfast</li>
+
+<li>✔ Dinner (Selected Packages)</li>
+
+<li>✔ Airport/Railway Pickup</li>
+
+<li>✔ AC Transportation</li>
+
+<li>✔ Professional Tour Guide</li>
+
+<li>✔ Sightseeing Tickets</li>
+
+<li>✔ Travel Insurance</li>
+
+<li>✔ Complimentary Welcome Drink</li>
+
+<li>✔ Customer Support 24×7</li>
+
+</ul>
+
+</div>
+
+<div style="background:white;padding:25px;width:420px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<h3 style="color:#e74c3c;">Not Included</h3>
+
+<ul style="margin-top:20px;line-height:35px;font-size:17px;">
+
+<li>✖ Personal Expenses</li>
+
+<li>✖ Shopping Costs</li>
+
+<li>✖ Lunch</li>
+
+<li>✖ Additional Adventure Activities</li>
+
+<li>✖ Camera Charges</li>
+
+<li>✖ Laundry Services</li>
+
+<li>✖ Medical Expenses</li>
+
+<li>✖ Extra Hotel Stay</li>
+
+<li>✖ Flight Ticket Upgrades</li>
+
+<li>✖ GST (if applicable)</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ================= PACKAGE PRICE TABLE ================= -->
+
+<h2 class="section-title">
+Package Pricing
+</h2>
+
+<table style="width:90%;margin:auto;border-collapse:collapse;background:white;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<tr style="background:#1abc9c;color:white;">
+
+<th style="padding:15px;">Package</th>
+
+<th>Duration</th>
+
+<th>Hotel</th>
+
+<th>Price</th>
+
+<th>Booking</th>
+
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">Ooty Escape</td>
+<td>4D / 3N</td>
+<td>★★★★</td>
+<td>₹18,999</td>
+<td><a href="booking.html">Book</a></td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">Kerala Tour</td>
+<td>5D / 4N</td>
+<td>★★★★★</td>
+<td>₹24,999</td>
+<td><a href="booking.html">Book</a></td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">Goa Holiday</td>
+<td>3D / 2N</td>
+<td>★★★★</td>
+<td>₹15,499</td>
+<td><a href="booking.html">Book</a></td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">Kodaikanal</td>
+<td>5D / 4N</td>
+<td>★★★★★</td>
+<td>₹22,999</td>
+<td><a href="booking.html">Book</a></td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">Manali</td>
+<td>6D / 5N</td>
+<td>★★★★★</td>
+<td>₹31,999</td>
+<td><a href="booking.html">Book</a></td>
+</tr>
+
+<tr align="center">
+<td style="padding:15px;">Andaman</td>
+<td>5D / 4N</td>
+<td>★★★★★</td>
+<td>₹39,999</td>
+<td><a href="booking.html">Book</a></td>
+</tr>
+
+</table>
+
+<!-- ===== PART 3 STARTS BELOW ===== -->
+<!-- ================= CUSTOMER TESTIMONIALS ================= -->
+
+<h2 class="section-title">What Our Travelers Say</h2>
+
+<div class="package-container">
+
+<div class="package-card">
+<div class="package-content">
+<h3>⭐⭐⭐⭐⭐ Rahul Kumar</h3>
+<p>
+"The Kerala package was perfectly organized. Hotels, food, and sightseeing
+were excellent. Highly recommended!"
+</p>
+</div>
+</div>
+
+<div class="package-card">
+<div class="package-content">
+<h3>⭐⭐⭐⭐⭐ Priya Sharma</h3>
+<p>
+"Our family enjoyed the Ooty trip. Everything was arranged professionally and
+the tour guide was very helpful."
+</p>
+</div>
+</div>
+
+<div class="package-card">
+<div class="package-content">
+<h3>⭐⭐⭐⭐☆ Arjun Patel</h3>
+<p>
+"Affordable pricing and luxury accommodation. Will definitely book my next
+holiday with MI Tourism."
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- ================= FAQ ================= -->
+
+<h2 class="section-title">Frequently Asked Questions</h2>
+
+<div style="width:90%;margin:auto;">
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-radius:8px;">
+<h3>Do the packages include transportation?</h3>
+<p>Yes. Most packages include airport/railway pickup, sightseeing transport and hotel transfers.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-radius:8px;">
+<h3>Can I customize my package?</h3>
+<p>Yes. You can customize destinations, hotels, meals and sightseeing according to your budget.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-radius:8px;">
+<h3>Are meals included?</h3>
+<p>Breakfast is included in all packages. Selected premium packages also include lunch and dinner.</p>
+</div>
+
+<div style="background:white;padding:20px;margin-bottom:15px;border-radius:8px;">
+<h3>Is there a cancellation policy?</h3>
+<p>Yes. Cancellation charges depend on the package and cancellation date.</p>
+</div>
+
+</div>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section style="margin:60px auto;width:90%;background:#1abc9c;color:white;text-align:center;padding:50px;border-radius:10px;">
+
+<h1>Ready to Explore India?</h1>
+
+<p style="font-size:18px;margin:20px 0;">
+Book your dream vacation today and create unforgettable memories with MI Tourism Development.
+</p>
+
+<a href="booking.html" class="btn" style="background:white;color:#1abc9c;font-weight:bold;">
+Book Your Package Now
+</a>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section style="width:90%;margin:50px auto;background:white;padding:40px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<h2 style="text-align:center;color:#333;">Subscribe to Our Newsletter</h2>
+
+<p style="text-align:center;margin:20px;">
+Receive exclusive offers, discounts and travel updates.
+</p>
+
+<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:15px;">
+
+<input
+type="email"
+placeholder="Enter your Email"
+style="padding:12px;width:350px;border:1px solid #ccc;border-radius:5px;">
+
+<button
+style="padding:12px 30px;background:#1abc9c;color:white;border:none;border-radius:5px;cursor:pointer;"
+onclick="subscribeNewsletter()">
+Subscribe
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="background:#333;color:white;padding:40px;margin-top:60px;">
+
+<div style="display:flex;justify-content:space-around;flex-wrap:wrap;">
+
+<div>
+<h2>MI Tourism Development</h2>
+<p>Your trusted travel partner.</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="HOME.html" style="color:white;">Home</a></p>
+<p><a href="hotels.html" style="color:white;">Hotels</a></p>
+<p><a href="packages.html" style="color:white;">Packages</a></p>
+<p><a href="booking.html" style="color:white;">Booking</a></p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>Email: info@mitourism.com</p>
+<p>Phone: +91 9876543210</p>
+<p>Chennai, Tamil Nadu</p>
+</div>
+
+</div>
+
+<hr style="margin:30px 0;">
+
+<p style="text-align:center;">
+© 2026 MI Tourism Development. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+document.querySelector(".search-btn").addEventListener("click",function(){
+
+alert("Searching available tour packages...");
+
+});
+
+function subscribeNewsletter(){
+
+let email=document.querySelector("input[type='email']").value;
+
+if(email===""){
+
+alert("Please enter your email.");
+
+return;
+
+}
+
+alert("Thank you for subscribing!");
+
+document.querySelector("input[type='email']").value="";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>MI TOURISM DEVELOPMENT</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/common.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: auto;
+  height:auto;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 50px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+.booking-box {
+  width: 90%;
+  margin: auto;
+  background: #ffffffcc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0003;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.booking-item {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-item label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.booking-item input, 
+.booking-item select {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.btn-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.search-btn {
+  background: #ffbf00;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.clear-btn {
+  background: #d9534f;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+.search-btn:hover {
+  background: #e0a800;
+}
+
+.clear-btn:hover {
+  background: #c9302c;
+}
+th, td {
+  border-style: hidden;
+}
+
+.feedback-card {
+    width: 350px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.stars {
+    color: #ffb300;
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px 0;
+    color: #444;
+}
+
+.message {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+}
+</style>
+ <link rel="icon" type="image/x-icon" href="PIC.jpeg">
+
+</head>
+<body>
+
+<div class="header">
+  <h1  style="font-family:arial black";>MI TOURISM DEVELOPMENT</h1>
+  <p style="font-family:arial black"; >Take advantage of every moment as you travel and explore your location. Tailored tour packages are designed to introduce you to authentic culture, heavenly cuisine, excellent transportation, opulent lodging, and exhilarating activities.
+
+<br>Whether you are travelling alone or with your family, we help you discover the must-see sights in Tamil Nadu and create wonderful memories.</p>
+</script>
+<div class="navbar">
+  <a href="#">HOME</a>
+  <a href="#">HOTELS</a>
+  <a href="#">TOUR PACKAGES</a>
+  <a href="#">EVENT PLACES</a>
+  <a href="#">WHAT'S OTHERS</a>
+  <a href="#" class="right">LOGIN/SIGNUP</a>
+</div>
+
+<!-- ===== NEW: quick-access bar for full-stack features (does not modify the navbar above) ===== -->
+<div class="util-bar">
+  <a href="login.html">Login / Register</a>
+  <a href="search.html">Search Places</a>
+  <a href="booking.html">Book a Tour</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="blog.html">Blog</a>
+  <a href="news.html">News</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="contact.html">Contact</a>
+  <a href="dashboard.html" class="right">Dashboard</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>ABOUT US</h2>
+    <h5 align="justify"><b>Vanakkam!</b><br>
+Step into the warmth of Tamil Nadu, where tradition meets modernity and hospitality knows no bounds! MI TOURISM DEVELOPMENT is a true marvel of the tourism industry. Founded in 2011 with a humble beginning, MITD has now become a giant in the hospitality sector. With over 53 hotels, youth hostels, aalayams, tour packages (one-day tours and multiple-day tours), eight boat houses, three telescope houses, a chain of restaurants, and more, MITD has succeeded in showcasing the wonders of Tamil Nadu to the world. The organization’s extensive offering of services reflects its dedication to quality. With a focus on promoting tourism, MITD has created a seamless and unforgettable experience for every visitor. Come experience the enchanting beauty of Tamil Nadu with MITD..</h5>
+    <div class="fakeimg" "style="height:100px;"><img src="PIC.jpeg" style=width:100% height:100%";></div>
+    <Center><p style="font-family:arial bold"; style="background-color: #1abc9c;">YOUR JOURNEY BEGINS HERE !.</p>
+    <h3 style="font-family:arial bold;">OUR CUSTOMER REVIEW</h3>
+    <p>CUSTOMER'S POV</p>
+   <!-- Feedback 1 -->
+    <div class="feedback-card">
+        <div class="profile">
+            <img src="user1.jpg" class="avatar">
+            <div>
+                <h3 class="name">Mohan Raj</h3>
+                <div class="stars">★★★★☆</div>
+            </div>
+        </div>
+        <p class="title">"ENJOY THE SUNRISE FROM YOUR ROOM"</p>
+        <p class="message">Wonderful place to relax with family. Clean rooms and great hospitality.</p>
+    </div>
+     <!-- Feedback 2 -->
+    <div class="feedback-card">
+        <div class="profile">
+            <img src="user2.jpg" class="avatar">
+            <div>
+                <h3 class="name">Satish Kumar </h3>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+        <p class="title">"VERY FRIENDLY HOTEL STAFF"</p>
+        <p class="message">Loved the staff, food, and peaceful beach experience.</p>
+    </div>
+  <!-- Feedback 4 -->
+    <div class="feedback-card">
+        <div class="profile">
+            <img src="user3.jpg" class="avatar">
+            <div>
+                <h3 class="name">Keerthana</h3>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+        <p class="title">"PERFECT FAMILY STAY"</p>
+        <p class="message">Kids-friendly place, tasty food, and awesome service!</p>
+    </div>
+  <!-- Feedback 6 -->
+    <div class="feedback-card">
+        <div class="profile">
+            <img src="user4.jpg" class="avatar">
+            <div>
+                <h3 class="name">Divya Lakshmi</h3>
+                <div class="stars">★★★★★</div>
+            </div>
+    <div ">ABOUT US</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>
+        </div>
+        <p class="title">"AMAZING STAFF & FOOD"</p>
+        <p class="message">Delicious food, friendly staff and peaceful environment. Loved it!</p>
+    </div>
+  </div>
+</marquee>
+  <div class="main">
+    <h2><b>ENTICING TAMIL NADU</b></h2>
+    <h5><marquee width="60%" direction="up" height="60px">DISCOVER THE MAGIC& EXPERIENCE THE EXCITEMENT</marquee></h5>
+     <img src="picture1.jpg"style=width:100% height:100%";>
+    <p><marquee width="60%" direction="left" height="60px" style=color:#3cb371 font-family:Arial Black";>OUR DESTINATIONS OVER A TAMIL NADU!</marquee></p>
+    <center><div class="fakeimg" style="height:1200px;"><div class="booking-box"><h1>Hotel</h1>
+<div class="booking-box">
+  
+  <div class="booking-item">
+    <label>Where do you want to stay?</label>
+    <select id="location">
+      <option value="">Select Location</option>
+      <option>Chennai</option>
+      <option>Madurai</option>
+      <option>Ooty</option>
+      <option>Kodaikanal</option>
+      <option>Coimbatore</option>
+      <option>Trichy</option>
+      <option>Velankanni</option>
+      <option>kaniyakumari</option>
+    </select>
+  </div>
+  <br>
+  <h1>CHECK IN</h1>
+  <div class="booking-item">
+    <label>Check-In</label>
+    <input type="date" id="checkin">
+  </div>
+<br>
+  <h1>CHECK OUT</h1>
+  <div class="booking-item">
+    <label>Check-Out</label>
+    <input type="date" id="checkout">
+  </div>
+<br>
+  <h1>SEARCH & CLEAR</h1>
+  <div class="booking-item btn-box">
+    <button class="search-btn">Search</button>
+    <button class="clear-btn" onclick="clearFields()">Clear</button>
+  </div>
+
+</div>
+
+<script>
+function clearFields() {
+  document.getElementById("location").value = "";
+  document.getElementById("checkin").value = "";
+  document.getElementById("checkout").value = "";
+}
+</script></div>
+    <p> <div class="w3-container">
+  <h1>OUR PRIDES</h1>
+
+  <div class="w3-padding w3-xlarge w3-teal">
+    <i class="fa fa-home">53 +Hotels |</i>
+    <i class="fa fa-location">100+Locations |</i>
+    <i class="fa fa-money">Best Price |</i>
+    <i class="fa fa-user"> Assured 74MN Travelers</i>
+    Welcome!
+  </div></p>
+    <br>
+    <h2><B>Coaches<B></h2>
+    <h5>Buses don’t just take you places, they connect you to moments you’ll never forget.</h5>
+    <div><img src="BUS1.jpeg" style=width:25% height:25%";><img src="BUS2.jpeg" style=width:25% height:25%";><img src="BUS3.jpeg" style=width:25% height:25%";> </div>
+    <p><B>OUR PRIDE BUSES<B></p>
+    <p>In our luxuriant travel coaches with sterile interiors, expert drivers, and a professional crew, we at MITD endeavour to give our passengers a peaceful and enjoyable journey.
+
+Booking one of our distinctive, state-of-the-art buses will guarantee that you travel in comfort and safety the entire time.</p>
+  </div>
+</div>
+<div class="footer">
+   <div class="fakeimg" "style="height:100px;"><img src="PIC.jpeg" style=width:25% height:25%";></div>
+<table style="width:100%">
+  <tr>
+    <th><b>MITD<b></th>
+    <th>PATNER WITH US</th> 
+    <th>POLICIES</th>
+    <th>GET IN TOUCH WIH US</th>
+  </tr>
+  <tr>
+    <td><a href="#">About Us</a></td>
+    <td><a href="#">Be Our Franchise</a></td>
+    <td><a href="#">Terms & Conditions</a></td>
+     <td>CONTACT NO: 1800 4253 1111 & 044 2533 3113</td>
+  </tr>
+  <tr>
+    <td><a href="#">Book Our Hotels</a></td>
+    <td><a href="#">Corporate Inquiries</a></td>
+    <td><a href="#">Privacy Policy</a></td>
+   <td>MAIL SUPPORT :support@mitdonline.com</td>
+  </tr>
+  <tr>
+    <td><a href="#">Book Tours</td>
+    <td></td>
+    <td><a href="#">Cancellation Policy</a></td>
+  </tr>
+</table>
+  <p>___________________________________________________________________________<p>
+  <br><b>OUR SOCIAL MEDIA</b><br><img src="FB.jpg" style=width:10% height:10%";><img src="linkedin.jpg" style=width:17% height:25%";><img src="INSTA.jpg" style=width:10% height:9%";><img src="X.jpg" style=width:10% height:10%";></p>
+  <p>___________________________________________________________________________<p>
+  <P>PAYMENT MODES<br><img src="PAYMENT.jpeg" style=width:50% height:50%";></P>
+  <p>___________________________________________________________________________<p>
+  <p>Copyright © 2025 All Rights Reserved MITD</p>
+</div>
+</body>
+</html>
+
