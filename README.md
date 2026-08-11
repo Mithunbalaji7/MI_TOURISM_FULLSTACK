@@ -101,6 +101,16 @@ Development Tools
 - Render
 - TiDB Cloud
 
+
+👨‍💻 Developer
+
+Mithun Balaji R M
+
+MI Tourism Development
+
+📄 License
+
+This project is developed for educational and project purposes.
  📁 Project Structure
 
 ```text
